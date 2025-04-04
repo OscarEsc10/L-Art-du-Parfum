@@ -1,0 +1,70 @@
+/* Main CSS File */
+/* Import all CSS files */
+@import 'reset.css';
+@import 'layout.css';
+@import 'components.css';
+@import 'animations.css';
+
+/* Additional custom styles */
+:root {
+    --primary-color: #fff;
+    --secondary-color: #999;
+    --background-color: #121212;
+    --dark-bg-color: #000;
+    --accent-color: #333;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Focus styles for accessibility */
+:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Print styles */
+@media print {
+    .announcement-bar, 
+    .header-icons, 
+    .nav-menu, 
+    .footer, 
+    .windows-activation {
+        display: none;
+    }
+    
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    .main-content {
+        height: auto;
+    }
+    
+    .product-sections {
+        position: static;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .view-more-btn {
+        border: 1px solid black;
+        color: black;
+    }
+} 
