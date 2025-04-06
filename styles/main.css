@@ -67,4 +67,65 @@
         border: 1px solid black;
         color: black;
     }
+}
+
+/* Asegurar que la fuente se aplique en elementos dinámicos o generados */
+* {
+    font-family: var(--font-primary) !important;
+}
+
+/* Optimizaciones de renderizado de fuentes */
+body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ajustes específicos para mejor legibilidad */
+.announcement-bar,
+.search-input::placeholder,
+.product-description {
+    letter-spacing: 0;
+    font-weight: 300;
+}
+
+.nav-menu a,
+.view-more-btn {
+    letter-spacing: 0.02em;
+    font-weight: 400;
+}
+
+.product-title,
+.logo {
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+
+/* Ajustes de peso de fuente para mejor legibilidad */
+.product-description,
+.footer a,
+.search-input {
+    font-weight: 300;
+}
+
+/* Asegurar que los íconos de Font Awesome no se vean afectados */
+.fa,
+.fas,
+.far,
+.fab {
+    font-family: "Font Awesome 6 Free" !important;
+}
+
+/* Ajustes específicos para JetBrains Mono */
+.logo-subtitle {
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+.nav-menu {
+    font-size: 0.9em; /* JetBrains Mono es naturalmente más ancha */
+}
+
+.product-description {
+    line-height: 1.6;
 } 

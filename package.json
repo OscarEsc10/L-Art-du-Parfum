@@ -1,0 +1,21 @@
+{
+  "name": "l-art-du-parfum",
+  "version": "1.0.0",
+  "description": "L’Art du Parfum is a online shop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OscarEsc10/L-Art-du-Parfum.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/OscarEsc10/L-Art-du-Parfum/issues"
+  },
+  "homepage": "https://github.com/OscarEsc10/L-Art-du-Parfum#readme"
+}

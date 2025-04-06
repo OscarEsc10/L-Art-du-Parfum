@@ -4,14 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L'Art du Parfum - Inspirado en Le Labo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Fallback y preload de la fuente */
+        @font-face {
+            font-family: 'Sophisto Expert';
+            src: url('fonts/SophistoExpertOTAGauge.woff2') format('woff2'),
+                 url('fonts/SophistoExpertOTAGauge.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+    </style>
 </head>
 <body>
-    <div class="announcement-bar">
-        Every L'Art du Parfum creation is mindfully blended, labeled and packed by hand. <a href="#">Track your order.</a>
-    </div>
-    
     <header class="header">
         <a href="#" class="logo">
             L'Art du Parfum<br>
@@ -42,7 +52,8 @@
     </nav>
     
     <main class="main-content">
-        <img src="https://source.unsplash.com/random/1600x900/?perfume,candle" alt="Perfume product" class="hero-image">
+        <img src="Images/fondo.jpg" alt="Perfume product" class="hero-image primary">
+        <img src="Images/fondo2.jpg" alt="Perfume product alternate" class="hero-image secondary">
         
         <div class="product-sections">
             <div class="product-section">
@@ -73,7 +84,7 @@
     
     <footer class="footer">
         <div class="footer-left">
-            <a href="#">https://www.lartduparfum.com/home-creations/cypres-21.html</a>
+            <a href="#">Service client</a>
         </div>
         <div class="footer-center">
             <a href="#">Privacy & Terms</a>
@@ -83,10 +94,5 @@
             <a href="#">S'abonner à notre newsletter</a>
         </div>
     </footer>
-    
-    <div class="windows-activation">
-        <p>Activar Windows</p>
-        <p>Ve a Configuración para activar Windows.</p>
-    </div>
 </body>
 </html>

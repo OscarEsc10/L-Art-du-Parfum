@@ -1,4 +1,17 @@
 /* Reset CSS */
+@font-face {
+    font-family: 'Sophisto Expert';
+    src: url('/fonts/fonts/ttf/JetBrainsMono-Bold.ttf') format('woff2'),
+         url('/fonts/fonts/ttf/JetBrainsMono-Bold.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --font-primary: 'JetBrains Mono', monospace;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,12 +20,16 @@
 
 html, body {
     height: 100%;
-    font-family: Arial, sans-serif;
+    font-family: var(--font-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 300;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+    font-family: var(--font-primary);
 }
 
 ul, ol {
@@ -20,11 +37,15 @@ ul, ol {
 }
 
 button, input, select, textarea {
-    font-family: inherit;
+    font-family: var(--font-primary);
     font-size: 100%;
     box-sizing: border-box;
     border: none;
     outline: none;
+}
+
+h1, h2, h3, h4, h5, h6, p, span {
+    font-family: var(--font-primary);
 }
 
 img {
