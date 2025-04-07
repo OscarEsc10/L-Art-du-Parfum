@@ -62,4 +62,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1000);
         }, 5000);
     }
+
+    
+    let cambio = document.getElementById("img")
+    
+    imagen.addEventListener("mouseover", () => {
+        imagen.src = "./Images/fondo2.jpg"
+    
+    imagen.addEventListener("mouseout", () => {
+        imagen.src = "./Images/fondo.jpg"
+    })
+    })
 }); 
+
