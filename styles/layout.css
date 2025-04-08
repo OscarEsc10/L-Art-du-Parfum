@@ -5,6 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    
 }
 
 .announcement-bar {
@@ -38,11 +39,11 @@ body {
 }
 
 .main-content {
+    display: inline-block;
     position: relative;
     flex: 1;
     min-height: 70vh;
     overflow: hidden;
-    transition: opacity 0.3s ease-in-out;
 }
 
 .footer {

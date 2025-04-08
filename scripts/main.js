@@ -52,21 +52,14 @@ document.addEventListener('DOMContentLoaded', function() {
         );
     }
     
-
-    let imagen = document.querySelector(".primary"); // la imagen principal que se va a cambiar
-    let sections = document.querySelectorAll(".product-section");
-    let originalSrc = imagen.src;
-
-    sections.forEach(section => {
-        section.addEventListener("mouseover", () => {
-            let nuevaImg = section.getAttribute("data-img");
-            if (nuevaImg) {
-                imagen.src = nuevaImg;
-            }
-        });
-
-    section.addEventListener("mouseout", () => {
-        imagen.src = originalSrc;
-    });
-});
+    // Mensaje de Windows
+    const windowsMsg = document.querySelector('.windows-activation');
+    if (windowsMsg) {
+        setTimeout(() => {
+            windowsMsg.style.opacity = '0';
+            setTimeout(() => {
+                windowsMsg.style.display = 'none';
+            }, 1000);
+        }, 5000);
+    }
 }); 
