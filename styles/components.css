@@ -127,6 +127,16 @@
     color: #fff;
 }
 
+.footerIns{
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.footerIns:hover {
+    color: #fff;
+}
+
 /* Windows Activation */
 .windows-activation {
     font-family: var(--font-primary);

@@ -1,0 +1,6 @@
+Crear las vistas de las opciones establecidas en el header, de modo que, al dar clic, solo redireccione en el aside.
+Crear las vistas de el menú principal, estas si redireccionan a una interfaz distintas con un target _blanck.
+Implementar la funcionalidad del buscador.
+Redireccionar al menú principal con el nombre del proyecto en la esquina.
+Implementar la opción del inicio de sesión que el usuario pueda logear (opcional) un descuento temporal por hacerlo.
+Agregar la funcionalidad de los iconos que estan en el header, de ultimo será el carrito de compras. 
