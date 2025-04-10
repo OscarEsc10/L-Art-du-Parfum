@@ -51,15 +51,4 @@ document.addEventListener('DOMContentLoaded', function() {
             rect.right <= (window.innerWidth || document.documentElement.clientWidth)
         );
     }
-    
-    // Mensaje de Windows
-    const windowsMsg = document.querySelector('.windows-activation');
-    if (windowsMsg) {
-        setTimeout(() => {
-            windowsMsg.style.opacity = '0';
-            setTimeout(() => {
-                windowsMsg.style.display = 'none';
-            }, 1000);
-        }, 5000);
-    }
 }); 

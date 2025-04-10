@@ -121,3 +121,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+const imagen = 
+document.querySelector('.imagen-hover')
+
+const video =
+document.getElementById('.video-fondo')
+
+imagen.addEventListener('mouseenter', () => {
+    video.style.opacity = '1'
+    video.onplay();
+});
+
+imagen.addEventListener('mouseleave', () => {
+    video.style.opacity = '0'
+    video.pause();
+    video.currentTime = 0;
+})
