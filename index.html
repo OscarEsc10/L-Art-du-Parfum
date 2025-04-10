@@ -8,12 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/components.css">
 </head>
 <body>
     <header class="header">
-        <a href="#" class="logo">
+        <a href="index.html" class="logo" id="main-logo">
             L'Art du Parfum<br>
             <span class="logo-subtitle">Parfum — MIAMI</span>
         </a>
@@ -30,15 +34,15 @@
     </header>
     
     <nav class="nav-menu">
-        <a href="#">Fine Fragrances</a>
-        <a href="#">Home Creations</a>
-        <a href="#">Body — Hair — Face</a>
-        <a href="#">Grooming</a>
-        <a href="#">Oddities</a>
-        <a href="#">Gifts</a>
-        <a href="#">Discovery</a>
-        <a href="#">Films</a>
-        <a href="#">About Us</a>
+        <a href="templates/fine-fragrances.html" data-section="fine-fragrances">Fine Fragrances</a>
+        <a href="templates/home-creations.html" data-section="home-creations">Home Creations</a>
+        <a href="templates/body.html" data-section="body">Body — Hair — Face</a>
+        <a href="templates/grooming.html" data-section="grooming">Grooming</a>
+        <a href="templates/oddities.html" data-section="oddities">Oddities</a>
+        <a href="templates/gifts.html" data-section="gifts">Gifts</a>
+        <a href="templates/discovery.html" data-section="discovery">Discovery</a>
+        <a href="templates/films.html" data-section="films">Films</a>
+        <a href="templates/about.html" data-section="about">About Us</a>
     </nav>
     
     <main class="main-content">
@@ -52,25 +56,25 @@
             <div class="product-section" data-section="eucalyptus">
                 <h2 class="product-title">Eucalyptus 20</h2>
                 <p class="product-description">Introducing our new creation...</p>
-                <a href="#" class="view-more-btn">View more</a>
+                <a href="templates/eucalyptus.html" class="view-more-btn">View more</a>
             </div>
             
             <div class="product-section" data-section="cypres">
                 <h2 class="product-title">Cyprès 21</h2>
                 <p class="product-description">a hushed retreat, deep in the woods...</p>
-                <a href="#" class="view-more-btn">View more</a>
+                <a href="templates/cypres.html" class="view-more-btn">View more</a>
             </div>
             
             <div class="product-section" data-section="body">
                 <h2 class="product-title">Body — Hair — Face</h2>
                 <p class="product-description">sensorial creations for the body, hair, and face...</p>
-                <a href="#" class="view-more-btn">View more</a>
+                <a href="templates/body.html" class="view-more-btn">View more</a>
             </div>
             
             <div class="product-section" data-section="about">
                 <h2 class="product-title">About L'Art du Parfum</h2>
                 <p class="product-description">freshly formulated and personalized since 2006</p>
-                <a href="#" class="view-more-btn">View more</a>
+                <a href="templates/about.html" class="view-more-btn">View more</a>
             </div>
         </div>
     </main>
