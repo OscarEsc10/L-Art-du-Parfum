@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroImages = document.querySelectorAll('.hero-image');
     const primaryImage = document.querySelector('.hero-image.primary');
     const mainContent = document.querySelector('.main-content');
+    const backgroundVideo = document.getElementById('background-video');
+    const backgroundImage = document.getElementById('background-image');
+    const hoverImages = document.querySelectorAll('.imagen-hover');
 
     // Agregar transición suave al contenido principal al cargar
     if (mainContent) {
@@ -120,22 +123,54 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Manejar efecto hover para video e imagen de fondo
+    if (backgroundVideo && backgroundImage && hoverImages.length > 0) {
+        let videoTimer;
+        let imageTimer;
+        let currentHoveredImage = null;
+        
+        hoverImages.forEach(img => {
+            img.addEventListener('mouseenter', () => {
+                clearTimeout(videoTimer);
+                clearTimeout(imageTimer);
+                currentHoveredImage = img;
+                
+                // Obtener la URL del video y la imagen del atributo data
+                const videoUrl = img.closest('.fragrance-item').getAttribute('data-video');
+                const backgroundUrl = img.getAttribute('data-background');
+                
+                if (videoUrl && backgroundVideo.querySelector('source')) {
+                    backgroundVideo.querySelector('source').src = videoUrl;
+                    backgroundVideo.load();
+                    backgroundVideo.style.opacity = '1';
+                    backgroundVideo.currentTime = 0;
+                    backgroundVideo.play().catch(error => {
+                        console.log('Error al reproducir el video:', error);
+                    });
+                }
+                
+                if (backgroundUrl) {
+                    backgroundImage.style.backgroundImage = `url('${backgroundUrl}')`;
+                    backgroundImage.style.opacity = '1';
+                }
+            });
+            
+            img.addEventListener('mouseleave', () => {
+                if (currentHoveredImage === img) {
+                    currentHoveredImage = null;
+                    videoTimer = setTimeout(() => {
+                        backgroundVideo.style.opacity = '0';
+                        setTimeout(() => {
+                            backgroundVideo.pause();
+                        }, 500);
+                    }, 300);
+                    
+                    imageTimer = setTimeout(() => {
+                        backgroundImage.style.opacity = '0';
+                    }, 300);
+                }
+            });
+        });
+    }
 });
-
-
-const imagen = 
-document.querySelector('.imagen-hover')
-
-const video =
-document.getElementById('.video-fondo')
-
-imagen.addEventListener('mouseenter', () => {
-    video.style.opacity = '1'
-    video.onplay();
-});
-
-imagen.addEventListener('mouseleave', () => {
-    video.style.opacity = '0'
-    video.pause();
-    video.currentTime = 0;
-})

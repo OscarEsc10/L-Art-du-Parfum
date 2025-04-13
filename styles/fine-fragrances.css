@@ -1,12 +1,52 @@
 /* Estilos específicos para la sección Fine Fragrances */
 body {
     overflow-x: hidden;
+    background: #000;
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+#background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+    pointer-events: none;
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
 }
 
 .main-content {
     min-height: 100vh;
     position: relative;
-    background: #000;
+    z-index: 1;
+    background: transparent;
+}
+
+.header, .nav-menu, .footer {
+    position: relative;
+    z-index: 2;
+    background: transparent;
 }
 
 .fine-fragrances-container {
@@ -15,6 +55,9 @@ body {
     color: white;
     animation: slideIn 0.8s ease-out;
     margin-top: 100px;
+    position: relative;
+    z-index: 1;
+    background: transparent;
 }
 
 @keyframes slideIn {
@@ -41,25 +84,28 @@ body {
     overflow: hidden;
     border-radius: 8px;
     transition: transform 0.3s ease;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(5px);
     height: 400px;
+    cursor: pointer;
 }
 
 .fragrance-item:hover {
     transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.15);
 }
 
 .fragrance-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .fragrance-item:hover img {
     transform: scale(1.05);
+    opacity: 0.4;
 }
 
 .fragrance-content {
@@ -69,6 +115,7 @@ body {
     right: 0;
     padding: 20px;
     background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    z-index: 2;
 }
 
 .fragrance-content h3 {
@@ -96,6 +143,17 @@ body {
 .view-details:hover {
     background: white;
     color: black;
+}
+
+/* Estilos para la imagen de fondo activada por hover */
+.fragrance-item[data-fragrance="eucalyptus"]:hover ~ #background-image {
+    background-image: url('../Images/depp.png');
+    opacity: 1;
+}
+
+.fragrance-item[data-fragrance="cypres"]:hover ~ #background-image {
+    background-image: url('../Images/ladieChanel.png');
+    opacity: 1;
 }
 
 @media (max-width: 768px) {

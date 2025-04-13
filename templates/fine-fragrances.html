@@ -7,14 +7,8 @@
     <link rel="icon" type="image/png" href="../Images/logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
     <link rel="stylesheet" href="../styles/reset.css" />
     <link rel="stylesheet" href="../styles/main.css" />
     <link rel="stylesheet" href="../styles/layout.css" />
@@ -22,6 +16,11 @@
     <link rel="stylesheet" href="../styles/fine-fragrances.css" />
   </head>
   <body>
+    <div id="background-image"></div>
+    <video id="background-video" muted loop>
+      <source src="" type="video/mp4">
+    </video>
+
     <header class="header">
       <a href="../index.html" class="logo" id="main-logo">
         L'Art du Parfum<br />
@@ -56,29 +55,26 @@
     </nav>
 
     <main class="main-content">
-        <video src="mi-video-mp4" muted loop>
-            <source src="/Images/videos/Tom Ford - Fougere D'Argent.mp4">
-            <div class="fine-fragrances-container">
-                <div class="fragrance-grid">
-                <div class="fragrance-item" data-fragrance="eucalyptus">
-                    <img src="../Images/DiorMens.png" alt="Eucalyptus 20" />
+        <div class="fine-fragrances-container">
+            <div class="fragrance-grid">
+                <div class="fragrance-item" data-fragrance="eucalyptus" data-video="../Images/videos/BLEU DE CHANEL – CHANEL Fragrance.mp4">
+                    <img src="../Images/depp.png" alt="Eucalyptus 20" class="imagen-hover" data-background="../Images/depp.png" />
                     <div class="fragrance-content">
-                    <h3>Gentlemens</h3>
-                    <p>Explore our Gentlemens exclusive list...</p>
-                    <button class="view-details">View Details</button>
+                        <h3>Gentlemens</h3>
+                        <p>Explore our Gentlemens exclusive list...</p>
+                        <button class="view-details">View Details</button>
                     </div>
                 </div>
-                <div class="fragrance-item" data-fragrance="cypres">
-                    <img src="../Images/chanel.png" alt="Cyprès 21" />
+                <div class="fragrance-item" data-fragrance="cypres" data-video="../Images/videos/Chanel Coco Mademoiselle Perfume B-Roll.mp4">
+                    <img src="../Images/ladieChanel.png" alt="Cyprès 21" class="imagen-hover" data-background="../Images/ladieChanel.png" />
                     <div class="fragrance-content">
-                    <h3>Ladies</h3>
-                    <p>Explore our Ladies exclusive list...</p>
-                    <button class="view-details">View Details</button>
+                        <h3>Ladies</h3>
+                        <p>Explore our Ladies exclusive list...</p>
+                        <button class="view-details">View Details</button>
                     </div>
-                </div>
                 </div>
             </div>
-        </video>
+        </div>
     </main>
 
     <footer class="footer">
