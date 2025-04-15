@@ -174,3 +174,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+const zona = document.getElementById('zona');
+const video = document.getElementById('videoFondo');
+
+zona.addEventListener('mouseenter', () => {
+  video.play();
+  video.style.opacity = '1';
+});
+
+zona.addEventListener('mouseleave', () => {
+  video.pause();
+  video.style.opacity = '0';
+});
