@@ -7,13 +7,12 @@
     <link rel="icon" type="image/png" href="../Images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/layout.css">
-    <link rel="stylesheet" href="../styles/animations.css">
     <link rel="stylesheet" href="../styles/fine-fragrances.css">
+    <link rel="stylesheet" href="../styles/about.css">
 </head>
 <body>
     <header class="header">
@@ -29,7 +28,7 @@
         <div class="header-icons">
             <a href="#" class="icon"><i class="far fa-envelope"></i></a>
             <a href="#" class="icon"><i class="far fa-user"></i></a>
-            <a href="#" class="icon"><i class="fas fa-shopping-bag"></i></a>
+            <a href="../templates/generalShop.html" class="icon"><i class="fas fa-shopping-bag"></i></a>
         </div>
     </header>
     
@@ -39,31 +38,110 @@
         <a href="body.html">Body — Hair — Face</a>
         <a href="oddities.html">Oddities</a>
         <a href="gifts.html">Gifts</a>
-        <a href="discovery.html">Discovery</a>
-        <a href="about.html">About Us</a>
+        <a href="about.html" class="about-link">About Us</a>
     </nav>
     
     <main class="main-content">
-        <div class="fine-fragrances-container">
-            <div class="fragrance-grid">
-                <div class="fragrance-item" data-fragrance="eucalyptus">
-                    <img src="../Images/fondo.jpg" alt="Eucalyptus 20">
-                    <div class="fragrance-content">
-                        <h3>Eucalyptus 20</h3>
-                        <p>Introducing our new creation...</p>
-                        <button class="view-details">View Details</button>
+        <div class="parallax-timeline">
+            <div class="timeline-scroll">
+                <div class="timeline-section active" data-year="2010">
+                    <div class="section-bg" style="background-image: url('../Images/historia/MiamideNoche.jpeg')"></div>
+                    <div class="section-overlay"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-text">
+                            <h3>The Beginnings</h3>
+                            <p>Our passion for perfumes was born in the heart of Miami...</p>
+                            <div class="timeline-details">
+                                <span class="year">2010</span>
+                                <span class="location">Miami, FL</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="fragrance-item" data-fragrance="cypres">
-                    <img src="../Images/fondo2.jpg" alt="Cyprès 21">
-                    <div class="fragrance-content">
-                        <h3>Cyprès 21</h3>
-                        <p>a hushed retreat, deep in the woods...</p>
-                        <button class="view-details">View Details</button>
+                
+                <div class="timeline-section" data-year="2015">
+                    <div class="section-bg" style="background-image: url('../Images/historia/Torre.png')"></div>
+                    <div class="section-overlay"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-text">
+                            <h3>The First Store</h3>
+                            <p>We opened our doors in Miami, bringing the essence of French perfumery...</p>
+                            <div class="timeline-details">
+                                <span class="year">2015</span>
+                                <span class="location">Miami, FL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-section" data-year="2018">
+                    <div class="section-bg" style="background-image: url('../Images/historia/miamiNoche.png')"></div>
+                    <div class="section-overlay"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-text">
+                            <h3>Innovation in Fragrances</h3>
+                            <p>We launched our first line of exclusive fragrances...</p>
+                            <div class="timeline-details">
+                                <span class="year">2018</span>
+                                <span class="location">Miami, FL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-section" data-year="2023">
+                    <div class="section-bg" style="background-image: url('../Images/historia/exclusiva.png')"></div>
+                    <div class="section-overlay"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-text">
+                            <h3>The present</h3>
+                            <p>We continue creating unique olfactory experiences...</p>
+                            <div class="timeline-details">
+                                <span class="year">2023</span>
+                                <span class="location">Miami, FL</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div class="timeline-navigation">
+                <button class="nav-button prev" aria-label="Previous section">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="timeline-dots">
+                    <span class="dot active" data-year="2010"></span>
+                    <span class="dot" data-year="2015"></span>
+                    <span class="dot" data-year="2018"></span>
+                    <span class="dot" data-year="2023"></span>
+                </div>
+                <button class="nav-button next" aria-label="Next section">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
         </div>
+
+        <aside class="social-sidebar">
+            <div class="social-toggle">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="social-container">
+                <div class="social-icons">
+                    <a href="https://twitter.com/" target="_blank" class="social-icon">
+                        <i class="fab fa-x-twitter" style="color: #000000;"></i>
+                    </a>
+                    <a href="https://instagram.com/" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram" style="color: #E1306C;"></i>
+                    </a>
+                    <a href="https://facebook.com/" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook-f" style="color: #1877F2;"></i>
+                    </a>
+                    <a href="https://wa.me/" target="_blank" class="social-icon">
+                        <i class="fab fa-whatsapp" style="color: #25D366;"></i>
+                    </a>
+                </div>
+            </div>
+        </aside>
     </main>
     
     <footer class="footer">
@@ -82,5 +160,6 @@
         </div>
     </footer>
     <script src="../script.js"></script>
+    <script src="../scripts/social-icons.js"></script>
 </body>
 </html>

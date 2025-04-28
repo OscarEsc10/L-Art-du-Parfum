@@ -30,7 +30,7 @@
         <div class="header-icons">
             <a href="#" class="icon"><i class="far fa-envelope"></i></a>
             <a href="#" class="icon"><i class="far fa-user"></i></a>
-            <a href="#" class="icon"><i class="fas fa-shopping-bag"></i></a>
+            <a href="../templates/generalShop.html" class="icon"><i class="fas fa-shopping-bag"></i></a>
         </div>
     </header>
     
@@ -40,15 +40,30 @@
         <a href="body.html">Body — Hair — Face</a>
         <a href="oddities.html">Oddities</a>
         <a href="gifts.html">Gifts</a>
-        <a href="discovery.html">Discovery</a>
         <a href="about.html">About Us</a>
     </nav>
     
     <main class="main-content">
+        <video id="background-video-1" autoplay muted loop>
+            <source src="../Images/videos/Tom Ford - Fougere D'Argent.mp4" type="video/mp4">
+        </video>
+        <video id="background-video-2" autoplay muted loop>
+            <source src="../Images/videos/VanillaSex.mp4" type="video/mp4">
+        </video>
+        
         <div class="fine-fragrances-container">
             <div class="fragrance-grid">
-                <div class="fragrance-item" data-fragrance="odditie" data-video="../Images/videos/Golden Marly.mp4">
-                    <img src="../Images/Odditie.png" alt="odditie">
+                <div class="fragrance-item" data-fragrance="odditie" data-video="1">
+                    <img src="../Images/Tom Ford.png" alt="odditie">
+                    <div class="fragrance-content">
+                        <h3>L'Art du Parfum</h3>
+                        <p>"When silence speaks louder than words…" 🚬 </p>
+                        <button class="view-details">View Details</button>
+                    </div>           
+                </div>
+                
+                <div class="fragrance-item" data-fragrance="odditie" data-video="2">
+                    <img src="../Images/Vanilla Tom Ford.png" alt="odditie">
                     <div class="fragrance-content">
                         <h3>L'Art du Parfum</h3>
                         <p>"When silence speaks louder than words…" 🚬 </p>

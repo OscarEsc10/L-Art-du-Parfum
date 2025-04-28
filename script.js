@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const backgroundVideo = document.getElementById('background-video');
     const backgroundImage = document.getElementById('background-image');
     const hoverImages = document.querySelectorAll('.imagen-hover');
+    const video1 = document.getElementById('background-video-1');
+    const video2 = document.getElementById('background-video-2');
+    const fragranceItems = document.querySelectorAll('.fragrance-item');
 
     // Agregar transición suave al contenido principal al cargar
     if (mainContent) {
@@ -173,6 +176,127 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    fragranceItems.forEach(item => {
+        const videoNumber = item.getAttribute('data-video');
+        const video = videoNumber === '1' ? video1 : video2;
+
+        item.addEventListener('mouseenter', () => {
+            video.style.opacity = '1';
+            video.play();
+        });
+
+        item.addEventListener('mouseleave', () => {
+            video.style.opacity = '0';
+            video.pause();
+        });
+    });
+
+    // Manejo de la línea de tiempo
+    const timelineSections = document.querySelectorAll('.timeline-section');
+    const dots = document.querySelectorAll('.dot');
+    const prevButton = document.querySelector('.nav-button.prev');
+    const nextButton = document.querySelector('.nav-button.next');
+    const floatingSocial = document.querySelector('.floating-social');
+    const socialHeader = document.querySelector('.social-header');
+    let currentSection = 0;
+
+    // Función para mostrar una sección específica
+    function showSection(index) {
+        timelineSections.forEach((section, i) => {
+            if (i === index) {
+                section.classList.add('active');
+                dots[i].classList.add('active');
+            } else {
+                section.classList.remove('active');
+                dots[i].classList.remove('active');
+            }
+        });
+    }
+
+    // Inicializar la primera sección
+    showSection(currentSection);
+
+    // Manejar la navegación con botones
+    if (prevButton && nextButton) {
+        prevButton.addEventListener('click', () => {
+            currentSection = Math.max(0, currentSection - 1);
+            showSection(currentSection);
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentSection = Math.min(timelineSections.length - 1, currentSection + 1);
+            showSection(currentSection);
+        });
+    }
+
+    // Manejar la navegación con dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSection = index;
+            showSection(currentSection);
+        });
+    });
+
+    // Manejar el hover en el menú About Us
+    if (aboutLink && floatingSocial) {
+        aboutLink.addEventListener('mouseenter', () => {
+            floatingSocial.style.transform = 'translateY(-50%) translateX(0)';
+        });
+
+        floatingSocial.addEventListener('mouseleave', () => {
+            floatingSocial.style.transform = 'translateY(-50%) translateX(100%)';
+        });
+    }
+
+    // Manejar el clic en el encabezado de redes sociales
+    if (socialHeader) {
+        socialHeader.addEventListener('click', () => {
+            const isExpanded = floatingSocial.classList.contains('expanded');
+            if (isExpanded) {
+                floatingSocial.classList.remove('expanded');
+                socialHeader.querySelector('i').style.transform = 'rotate(0deg)';
+            } else {
+                floatingSocial.classList.add('expanded');
+                socialHeader.querySelector('i').style.transform = 'rotate(90deg)';
+            }
+        });
+    }
+
+    // Manejar la navegación con teclas
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+            currentSection = Math.max(0, currentSection - 1);
+            showSection(currentSection);
+        } else if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+            currentSection = Math.min(timelineSections.length - 1, currentSection + 1);
+            showSection(currentSection);
+        }
+    });
+
+    // Manejar el scroll con el mouse
+    let isScrolling = false;
+    document.addEventListener('wheel', (e) => {
+        if (isScrolling) return;
+        isScrolling = true;
+
+        if (e.deltaY > 0) {
+            currentSection = Math.min(timelineSections.length - 1, currentSection + 1);
+        } else {
+            currentSection = Math.max(0, currentSection - 1);
+        }
+
+        showSection(currentSection);
+        setTimeout(() => {
+            isScrolling = false;
+        }, 1000);
+    });
+
+    // Animación de los iconos sociales
+    const socialIcons = document.querySelectorAll('.social-icon');
+    socialIcons.forEach((icon, index) => {
+        icon.style.transitionDelay = `${index * 0.1}s`;
+    });
 });
 
 const zona = document.getElementById('zona');
