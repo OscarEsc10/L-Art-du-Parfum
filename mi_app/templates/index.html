@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,15 +10,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/animations.css">
-    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="{% static 'reset.css' %}">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="{% static 'layout.css' %}">
+    <link rel="stylesheet" href="{% static 'animations.css' %}">
+    <link rel="stylesheet" href="{% static 'components.css' %}">
 </head>
 <body>
     <header class="header">
-        <a href="index.html" class="logo" id="main-logo">
+        <a href="{% url 'index' %}" class="logo" id="main-logo">
             L'Art du Parfum<br>
             <span class="logo-subtitle">Parfum — MIAMI</span>
         </a>
@@ -29,25 +30,25 @@
         <div class="header-icons">
             <a href="#" class="icon"><i class="far fa-envelope"></i></a>
             <a href="" class="icon"><i class="far fa-user"></i></a>
-            <a href="templates/generalShop.html" class="icon"><i class="fas fa-shopping-bag"></i></a>
+            <a href="{% url 'generalShop' %}" class="icon"><i class="fas fa-shopping-bag"></i></a>
         </div>
     </header>
     
     <nav class="nav-menu">
-        <a href="templates/fine-fragrances.html" data-section="fine-fragrances">Fine Fragrances</a>
-        <a href="templates/home-creations.html" data-section="home-creations">Home Creations</a>
-        <a href="templates/body.html" data-section="body">Body — Hair — Face</a>
-        <a href="templates/oddities.html" data-section="oddities">Oddities</a>
-        <a href="templates/gifts.html" data-section="gifts">Gifts</a>
-        <a href="templates/about.html" data-section="about">About Us</a>
+        <a href="{% url 'fine-fragrances' %}" data-section="fine-fragrances">Fine Fragrances</a>
+        <a href="{% url 'home-creations' %}" data-section="home-creations">Home Creations</a>
+        <a href="{% url 'body' %}" data-section="body">Body - Hair - Face</a>
+        <a href="{% url 'oddities' %}" data-section="oddities">Oddities</a>
+        <a href="{% url 'gifts' %}" data-section=gifts>Gifts</a>
+        <a href="{% url 'about' %}" data-section="about">About Us</a>
     </nav>
     
     <main class="main-content">
-        <img src="Images/fondoMiami.png" alt="Perfume product" class="hero-image primary">
-        <img src="Images/odditie2.png" alt="Perfume product alternate" class="hero-image" data-section="eucalyptus">
-        <img src="Images/fondo3.jpg" alt="Perfume product alternate" class="hero-image" data-section="cypres">
-        <img src="Images/fondo4.jpg" alt="Perfume product alternate" class="hero-image" data-section="body">
-        <img src="Images/aboutUs.png" alt="Perfume product alternate" class="hero-image" data-section="about">
+        <img src="{% static 'mi_app/Images/fondoMiami.png' %}" alt="Perfume product" class="hero-image primary">
+        <img src="{% static 'mi_app/Images/odditie2.png' %}" alt="Perfume product alternate" class="hero-image" data-section="eucalyptus">
+        <img src="{% static 'mi_app/Images/fondo3.jpg' %}" alt="Perfume product alternate" class="hero-image" data-section="cypres">
+        <img src="{% static 'mi_app/Images/fondo4.jpg' %}" alt="Perfume product alternate" class="hero-image" data-section="body">
+        <img src="{% static 'mi_app/Images/fondo4.jpg' %}" alt="Perfume product alternate" class="hero-image" data-section="about">
         <div class="product-sections">
             <div class="product-section" data-section="eucalyptus">
                 <h2 class="product-title">Oddities</h2>
@@ -58,19 +59,19 @@
             <div class="product-section" data-section="cypres">
                 <h2 class="product-title">Gifts</h2>
                 <p class="product-description">our gifts are waiting for you</p>
-                <a href="templates/generalShop.html" class="view-more-btn">View more</a>
+                <a href="{% url 'generalShop' %}" class="view-more-btn">View more</a>
             </div>
             
             <div class="product-section" data-section="body">
                 <h2 class="product-title">Body — Hair — Face</h2>
                 <p class="product-description">sensorial creations for the body, hair, and face...</p>
-                <a href="templates/body.html" class="view-more-btn">View more</a>
+                <a href="{% url 'body' %}" class="view-more-btn">View more</a>
             </div>
             
             <div class="product-section" data-section="about">
                 <h2 class="product-title">About L'Art du Parfum</h2>
                 <p class="product-description">freshly formulated and personalized since 2006</p>
-                <a href="templates/about.html" class="view-more-btn">View more</a>
+                <a href="{% url 'about' %}" class="view-more-btn">View more</a>
             </div>
         </div>
     </main>
@@ -92,6 +93,8 @@
             <a href="#">S'abonner à notre newsletter</a>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="{% static 'js/static.js' %}"></script>
+    <script src="{% static 'js/social-icons.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

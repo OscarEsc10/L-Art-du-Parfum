@@ -1,28 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Creations - L'Art du Parfum</title>
+    <title>Fine Fragrances - L'Art du Parfum</title>
     <link rel="icon" type="image/png" href="../Images/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../styles/reset.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/layout.css">
-    <link rel="stylesheet" href="../styles/animations.css">
-    <link rel="stylesheet" href="../styles/fine-fragrances.css">
+    <link rel="stylesheet" href="{% static 'reset.css' %}">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="{% static 'layout.css' %}">
+    <link rel="stylesheet" href="{% static 'animations.css' %}">
+    <link rel="stylesheet" href="{% static 'components.css' %}">
 </head>
 <body>
-    <div id="background-image"></div>
-    <video id="background-video" muted loop>
-        <source src="" type="video/mp4">
-    </video>
-
     <header class="header">
-        <a href="../index.html" class="logo" id="main-logo">
+        <a href="{% url 'index' %}" class="logo" id="main-logo">
             L'Art du Parfum<br>
             <span class="logo-subtitle">Parfum — MIAMI</span>
         </a>
@@ -39,30 +35,22 @@
     </header>
     
     <nav class="nav-menu">
-        <a href="fine-fragrances.html">Fine Fragrances</a>
-        <a href="home-creations.html" class="active">Home Creations</a>
-        <a href="body.html">Body — Hair — Face</a>
-        <a href="oddities.html">Oddities</a>
-        <a href="gifts.html">Gifts</a>
-        <a href="about.html">About Us</a>
+        <a href="{% url 'fine-fragrances' %}" data-section="fine-fragrances">Fine Fragrances</a>
+        <a href="{% url 'home-creations' %}" data-section="home-creations">Home Creations</a>
+        <a href="{% url 'body' %}" data-section="body">Body – Hair – Face</a>
+        <a href="{% url 'oddities' %}" data-section="oddities">Oddities</a>
+        <a href="{% url 'gifts' %}" data-section=gifts>Gifts</a>
+        <a href="{% url 'about' %}" data-section="about">About Us</a>
     </nav>
     
     <main class="main-content">
         <div class="fine-fragrances-container">
             <div class="fragrance-grid">
-                <div class="fragrance-item" data-fragrance="mans">
-                    <img src="../Images/homeCreationForMans.png" alt="L ART OF MANS" class="imagen-hover" data-background="../Images/Rpattinson.png" />
+                <div class="fragrance-item" data-fragrance="Gift">
+                    <img src="../Images/Sales.png" alt="Gift">
                     <div class="fragrance-content">
-                        <h3>L ART OF MANS</h3>
-                        <p>Introducing our new creation...</p>
-                        <button class="view-details">View Details</button>
-                    </div>
-                </div>
-                <div class="fragrance-item" data-fragrance="womens">
-                    <img src="../Images/homeCreationForWomens.png" alt="L ART OF WOMENS" class="imagen-hover" data-background="../Images/chanel.png" />
-                    <div class="fragrance-content">
-                        <h3>L ART OF WOMENS</h3>
-                        <p>Introducing our new creation...</p>
+                        <h3>Discounts</h3>
+                        <p>Introducing our discounts...</p>
                         <button class="view-details">View Details</button>
                     </div>
                 </div>
@@ -85,6 +73,7 @@
             <a href="#">S'abonner à notre newsletter</a>
         </div>
     </footer>
-    <script src="../script.js"></script>
+    <script src="{% static 'js/static.js' %}"></script>
+    <script src="{% static 'js/social-icons.js' %}"></script>
 </body>
 </html>
