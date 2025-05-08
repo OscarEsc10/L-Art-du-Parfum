@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fine Fragrances - L'Art du Parfum</title>
-    <link rel="icon" type="image/png" href="../Images/logo.png">
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
         <div class="header-icons">
             <a href="#" class="icon"><i class="far fa-envelope"></i></a>
             <a href="#" class="icon"><i class="far fa-user"></i></a>
-            <a href="../templates/generalShop.html" class="icon"><i class="fas fa-shopping-bag"></i></a>
+            <a href="{% url 'generalShop' %}" class="icon"><i class="fas fa-shopping-bag"></i></a>
         </div>
     </header>
     
@@ -46,16 +46,16 @@
     
     <main class="main-content">
         <video id="background-video-1" autoplay muted loop>
-            <source src="../Images/videos/Tom Ford - Fougere D'Argent.mp4" type="video/mp4">
+            <source src="{% static 'images/videos/Tom Ford - Fougere D\'Argent.mp4' %}" type="video/mp4">
         </video>
         <video id="background-video-2" autoplay muted loop>
-            <source src="../Images/videos/VanillaSex.mp4" type="video/mp4">
+            <source src="{% static 'images/videos/VanillaSex.mp4' %}" type="video/mp4">
         </video>
         
         <div class="fine-fragrances-container">
             <div class="fragrance-grid">
                 <div class="fragrance-item" data-fragrance="odditie" data-video="1">
-                    <img src="../Images/Tom Ford.png" alt="odditie">
+                    <img src="{% static 'images/Tom Ford.png' %}" alt="odditie">
                     <div class="fragrance-content">
                         <h3>L'Art du Parfum</h3>
                         <p>"When silence speaks louder than words…" 🚬 </p>
@@ -64,7 +64,7 @@
                 </div>
                 
                 <div class="fragrance-item" data-fragrance="odditie" data-video="2">
-                    <img src="../Images/Vanilla Tom Ford.png" alt="odditie">
+                    <img src="{% static 'images/Vanilla Tom Ford.png' %}" alt="odditie">
                     <div class="fragrance-content">
                         <h3>L'Art du Parfum</h3>
                         <p>"When silence speaks louder than words…" 🚬 </p>

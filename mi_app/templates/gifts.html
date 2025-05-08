@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fine Fragrances - L'Art du Parfum</title>
-    <link rel="icon" type="image/png" href="../Images/logo.png">
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -30,7 +30,7 @@
         <div class="header-icons">
             <a href="#" class="icon"><i class="far fa-envelope"></i></a>
             <a href="#" class="icon"><i class="far fa-user"></i></a>
-            <a href="../templates/generalShop.html" class="icon"><i class="fas fa-shopping-bag"></i></a>
+            <a href="{% url 'generalShop' %}" class="icon"><i class="fas fa-shopping-bag"></i></a>
         </div>
     </header>
     
@@ -39,7 +39,7 @@
         <a href="{% url 'home-creations' %}" data-section="home-creations">Home Creations</a>
         <a href="{% url 'body' %}" data-section="body">Body – Hair – Face</a>
         <a href="{% url 'oddities' %}" data-section="oddities">Oddities</a>
-        <a href="{% url 'gifts' %}" data-section=gifts>Gifts</a>
+        <a href="{% url 'gifts' %}" data-section="gifts">Gifts</a>
         <a href="{% url 'about' %}" data-section="about">About Us</a>
     </nav>
     
@@ -47,7 +47,7 @@
         <div class="fine-fragrances-container">
             <div class="fragrance-grid">
                 <div class="fragrance-item" data-fragrance="Gift">
-                    <img src="../Images/Sales.png" alt="Gift">
+                    <img src="{% static 'images/Sales.png' %}" alt="Gift">
                     <div class="fragrance-content">
                         <h3>Discounts</h3>
                         <p>Introducing our discounts...</p>
@@ -73,7 +73,7 @@
             <a href="#">S'abonner à notre newsletter</a>
         </div>
     </footer>
-    <script src="{% static 'js/static.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
     <script src="{% static 'js/social-icons.js' %}"></script>
 </body>
 </html>

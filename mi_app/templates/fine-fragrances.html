@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fine Fragrances - L'Art du Parfum</title>
-    <link rel="icon" type="image/png" href="../Images/logo.png" />
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
@@ -39,7 +39,7 @@
       <div class="header-icons">
         <a href="#" class="icon"><i class="far fa-envelope"></i></a>
         <a href="#" class="icon"><i class="far fa-user"></i></a>
-        <a href="../templates/generalShop.html" class="icon"><i class="fas fa-shopping-bag"></i></a>
+        <a href="{% url 'generalShop' %}" class="icon"><i class="fas fa-shopping-bag"></i></a>
       </div>
     </header>
 
@@ -55,8 +55,8 @@
     <main class="main-content">
         <div class="fine-fragrances-container">
             <div class="fragrance-grid">
-                <div class="fragrance-item" data-fragrance="eucalyptus" data-video="../Images/videos/BLEU DE CHANEL – CHANEL Fragrance.mp4">
-                    <img src="../Images/depp.png" alt="Eucalyptus 20" class="imagen-hover" data-background="../Images/depp.png" />
+                <div class="fragrance-item" data-fragrance="eucalyptus" data-video="{% static 'Images/videos/BLEU_DE_CHANEL_CHANEL_Fragrance.mp4' %}">
+                    <img src="{% static 'images/depp.png' %}" alt="Eucalyptus 20" class="imagen-hover" data-background="../Images/depp.png" />
                     <div class="fragrance-content">
                         <h3>Gentlemens</h3>
                         <p>Explore our Gentlemens exclusive list...</p>
@@ -64,7 +64,7 @@
                     </div>
                 </div>
                 <div class="fragrance-item" data-fragrance="cypres" data-video="../Images/videos/Chanel Coco Mademoiselle Perfume B-Roll.mp4">
-                    <img src="../Images/ladieChanel.png" alt="Cyprès 21" class="imagen-hover" data-background="../Images/ladieChanel.png" />
+                    <img src="{% static 'images/ladieChanel.png' %}" alt="Cyprès 21" class="imagen-hover" data-background="../Images/ladieChanel.png" />
                     <div class="fragrance-content">
                         <h3>Ladies</h3>
                         <p>Explore our Ladies exclusive list...</p>

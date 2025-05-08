@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L'Art du Parfum</title>
-    <link rel="icon" type="image/png" href="Images/logo.png">
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -30,7 +30,7 @@
         <div class="header-icons">
             <a href="#" class="icon"><i class="far fa-envelope"></i></a>
             <a href="" class="icon"><i class="far fa-user"></i></a>
-            <a href="{% url 'generalShop' %}" class="icon"><i class="fas fa-shopping-bag"></i></a>
+            <a href="../templates/generalShop.html" class="icon"><i class="fas fa-shopping-bag"></i></a>
         </div>
     </header>
     
@@ -39,21 +39,21 @@
         <a href="{% url 'home-creations' %}" data-section="home-creations">Home Creations</a>
         <a href="{% url 'body' %}" data-section="body">Body - Hair - Face</a>
         <a href="{% url 'oddities' %}" data-section="oddities">Oddities</a>
-        <a href="{% url 'gifts' %}" data-section=gifts>Gifts</a>
+        <a href="{% url 'gifts' %}" data-section="gifts">Gifts</a>
         <a href="{% url 'about' %}" data-section="about">About Us</a>
     </nav>
     
     <main class="main-content">
-        <img src="{% static 'mi_app/Images/fondoMiami.png' %}" alt="Perfume product" class="hero-image primary">
-        <img src="{% static 'mi_app/Images/odditie2.png' %}" alt="Perfume product alternate" class="hero-image" data-section="eucalyptus">
-        <img src="{% static 'mi_app/Images/fondo3.jpg' %}" alt="Perfume product alternate" class="hero-image" data-section="cypres">
-        <img src="{% static 'mi_app/Images/fondo4.jpg' %}" alt="Perfume product alternate" class="hero-image" data-section="body">
-        <img src="{% static 'mi_app/Images/fondo4.jpg' %}" alt="Perfume product alternate" class="hero-image" data-section="about">
+        <img src="{% static 'images/fondoMiami.png' %}" alt="Perfume product" class="hero-image primary">
+        <img src="{% static 'images/odditie2.png' %}" alt="Perfume product alternate" class="hero-image" data-section="eucalyptus">
+        <img src="{% static 'images/fondo3.jpg' %}" alt="Perfume product alternate" class="hero-image" data-section="cypres">
+        <img src="{% static 'images/fondodiorladies.png' %}" alt="Perfume product alternate" class="hero-image" data-section="body">
+        <img src="{% static 'images/fondo4.jpg' %}" alt="Perfume product alternate" class="hero-image" data-section="about">
         <div class="product-sections">
             <div class="product-section" data-section="eucalyptus">
                 <h2 class="product-title">Oddities</h2>
                 <p class="product-description">explore our oddities</p>
-                <a href="templates/eucalyptus.html" class="view-more-btn">View more</a>
+                <a href="{% url 'oddities' %}" class="view-more-btn">View more</a>
             </div>
             
             <div class="product-section" data-section="cypres">
@@ -76,8 +76,6 @@
         </div>
     </main>
 
-    
-    
     <footer class="footer">
         <div class="footer-left">
             <a href="#">Service client</a>
@@ -93,7 +91,7 @@
             <a href="#">S'abonner à notre newsletter</a>
         </div>
     </footer>
-    <script src="{% static 'js/static.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/social-icons.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
 </body>
