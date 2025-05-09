@@ -1,0 +1,63 @@
+body {
+    background: #111;
+    color: #e5e1d8;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.fragrance-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding: 3rem 2rem;
+    justify-items: center;
+}
+
+.fragrance-item {
+    background: #181818;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.4);
+    padding: 2rem 1rem 1.5rem 1rem;
+    text-align: center;
+    width: 220px;
+    transition: transform 0.2s;
+}
+
+.fragrance-item:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.6);
+}
+
+.fragrance-item img {
+    width: 80px;
+    height: 500px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.fragrance-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #f5e9c8;
+}
+
+.fragrance-item p {
+    font-size: 0.95rem;
+    color: #bdb7a7;
+    margin-bottom: 1.2rem;
+}
+
+.view-details {
+    background: none;
+    border: 1px solid #e5e1d8;
+    color: #e5e1d8;
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.view-details:hover {
+    background: #e5e1d8;
+    color: #181818;
+} 
