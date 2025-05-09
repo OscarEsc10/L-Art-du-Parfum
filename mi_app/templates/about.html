@@ -4,18 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fine Fragrances - L'Art du Parfum</title>
+    <title>About Us - L'Art du Parfum</title>
     <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="{% static 'reset.css' %}">
     <link rel="stylesheet" href="{% static 'main.css' %}">
-    <link rel="stylesheet" href="{% static 'layout.css' %}">
-    <link rel="stylesheet" href="{% static 'animations.css' %}">
-    <link rel="stylesheet" href="{% static 'components.css' %}">
+    <link rel="stylesheet" href="{% static 'about-view.css' %}">
 </head>
 <body>
     <header class="header">
@@ -31,7 +27,7 @@
         <div class="header-icons">
             <a href="#" class="icon"><i class="far fa-envelope"></i></a>
             <a href="#" class="icon"><i class="far fa-user"></i></a>
-            <a href="../templates/generalShop.html" class="icon"><i class="fas fa-shopping-bag"></i></a>
+            <a href="{% url 'generalShop' %}" class="icon"><i class="fas fa-shopping-bag"></i></a>
         </div>
     </header>
     
@@ -40,7 +36,7 @@
         <a href="{% url 'home-creations' %}" data-section="home-creations">Home Creations</a>
         <a href="{% url 'body' %}" data-section="body">Body – Hair – Face</a>
         <a href="{% url 'oddities' %}" data-section="oddities">Oddities</a>
-        <a href="{% url 'gifts' %}" data-section=gifts>Gifts</a>
+        <a href="{% url 'gifts' %}" data-section="gifts">Gifts</a>
         <a href="{% url 'about' %}" data-section="about">About Us</a>
     </nav>
     
@@ -48,7 +44,7 @@
         <div class="parallax-timeline">
             <div class="timeline-scroll">
                 <div class="timeline-section active" data-year="2010">
-                    <div class="section-bg" style="background-image: url('../Images/historia/MiamideNoche.jpeg')"></div>
+                    <div class="section-bg" style="background-image: url('{% static 'images/historia/MiamideNoche.jpeg' %}')"></div>
                     <div class="section-overlay"></div>
                     <div class="timeline-content">
                         <div class="timeline-text">
@@ -63,7 +59,7 @@
                 </div>
                 
                 <div class="timeline-section" data-year="2015">
-                    <div class="section-bg" style="background-image: url('../Images/historia/Torre.png')"></div>
+                    <div class="section-bg" style="background-image: url('{% static 'images/historia/Torre.png' %}')"></div>
                     <div class="section-overlay"></div>
                     <div class="timeline-content">
                         <div class="timeline-text">
@@ -78,7 +74,7 @@
                 </div>
                 
                 <div class="timeline-section" data-year="2018">
-                    <div class="section-bg" style="background-image: url('../Images/historia/miamiNoche.png')"></div>
+                    <div class="section-bg" style="background-image: url('{% static 'images/historia/miamiNoche.png' %}')"></div>
                     <div class="section-overlay"></div>
                     <div class="timeline-content">
                         <div class="timeline-text">
@@ -93,7 +89,7 @@
                 </div>
                 
                 <div class="timeline-section" data-year="2023">
-                    <div class="section-bg" style="background-image: url('../Images/historia/exclusiva.png')"></div>
+                    <div class="section-bg" style="background-image: url('{% static 'images/historia/exclusiva.png' %}')"></div>
                     <div class="section-overlay"></div>
                     <div class="timeline-content">
                         <div class="timeline-text">
@@ -131,16 +127,16 @@
             <div class="social-container">
                 <div class="social-icons">
                     <a href="https://twitter.com/" target="_blank" class="social-icon">
-                        <i class="fab fa-x-twitter" style="color: #000000;"></i>
+                        <i class="fab fa-x-twitter"></i>
                     </a>
                     <a href="https://instagram.com/" target="_blank" class="social-icon">
-                        <i class="fab fa-instagram" style="color: #E1306C;"></i>
+                        <i class="fab fa-instagram"></i>
                     </a>
                     <a href="https://facebook.com/" target="_blank" class="social-icon">
-                        <i class="fab fa-facebook-f" style="color: #1877F2;"></i>
+                        <i class="fab fa-facebook-f"></i>
                     </a>
                     <a href="https://wa.me/" target="_blank" class="social-icon">
-                        <i class="fab fa-whatsapp" style="color: #25D366;"></i>
+                        <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
             </div>
@@ -162,7 +158,7 @@
             <a href="#">S'abonner à notre newsletter</a>
         </div>
     </footer>
-    <script src="{% static 'js/static.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
     <script src="{% static 'js/social-icons.js' %}"></script>
 </body>
 </html>

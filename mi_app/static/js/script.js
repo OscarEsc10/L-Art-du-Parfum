@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Prevenir cualquier tipo de scroll
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
+    window.scrollTo(0, 0);
+    
+    // Prevenir el scroll con la rueda del mouse
+    document.addEventListener('wheel', (e) => {
+        e.preventDefault();
+    }, { passive: false });
+
+    // Prevenir el scroll táctil en dispositivos móviles
+    document.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+    }, { passive: false });
+
     // Manejo de las secciones de productos y imágenes de fondo
     const productSections = document.querySelectorAll('.product-section');
     const heroImages = document.querySelectorAll('.hero-image');
@@ -178,17 +193,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     fragranceItems.forEach(item => {
-        const videoNumber = item.getAttribute('data-video');
-        const video = videoNumber === '1' ? video1 : video2;
-
         item.addEventListener('mouseenter', () => {
-            video.style.opacity = '1';
-            video.play();
+            const videoUrl = item.getAttribute('data-video');
+            const imageUrl = item.querySelector('img').getAttribute('data-background');
+
+            if (videoUrl && backgroundVideo.querySelector('source')) {
+                backgroundVideo.querySelector('source').src = videoUrl;
+                backgroundVideo.load();
+                backgroundVideo.style.opacity = '1';
+                backgroundVideo.currentTime = 0;
+                backgroundVideo.play().catch(error => {
+                    console.log('Error al reproducir el video:', error);
+                });
+            }
+
+            if (imageUrl) {
+                backgroundImage.style.backgroundImage = `url('${imageUrl}')`;
+                backgroundImage.style.opacity = '1';
+            }
         });
 
         item.addEventListener('mouseleave', () => {
-            video.style.opacity = '0';
-            video.pause();
+            backgroundVideo.style.opacity = '0';
+            backgroundVideo.pause();
+            backgroundImage.style.opacity = '0';
         });
     });
 
@@ -272,24 +300,6 @@ document.addEventListener('DOMContentLoaded', () => {
             currentSection = Math.min(timelineSections.length - 1, currentSection + 1);
             showSection(currentSection);
         }
-    });
-
-    // Manejar el scroll con el mouse
-    let isScrolling = false;
-    document.addEventListener('wheel', (e) => {
-        if (isScrolling) return;
-        isScrolling = true;
-
-        if (e.deltaY > 0) {
-            currentSection = Math.min(timelineSections.length - 1, currentSection + 1);
-        } else {
-            currentSection = Math.max(0, currentSection - 1);
-        }
-
-        showSection(currentSection);
-        setTimeout(() => {
-            isScrolling = false;
-        }, 1000);
     });
 
     // Animación de los iconos sociales
