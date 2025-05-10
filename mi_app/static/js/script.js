@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Prevenir cualquier tipo de scroll
-    document.body.style.overflow = 'hidden';
-    document.documentElement.style.overflow = 'hidden';
+    // document.body.style.overflow = 'hidden';
+    // document.documentElement.style.overflow = 'hidden';
     window.scrollTo(0, 0);
     
     // Prevenir el scroll con la rueda del mouse
@@ -193,30 +193,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     fragranceItems.forEach(item => {
+        const video = item.querySelector('.fragrance-video');
+        
         item.addEventListener('mouseenter', () => {
-            const videoUrl = item.getAttribute('data-video');
-            const imageUrl = item.querySelector('img').getAttribute('data-background');
-
-            if (videoUrl && backgroundVideo.querySelector('source')) {
-                backgroundVideo.querySelector('source').src = videoUrl;
-                backgroundVideo.load();
-                backgroundVideo.style.opacity = '1';
-                backgroundVideo.currentTime = 0;
-                backgroundVideo.play().catch(error => {
-                    console.log('Error al reproducir el video:', error);
-                });
-            }
-
-            if (imageUrl) {
-                backgroundImage.style.backgroundImage = `url('${imageUrl}')`;
-                backgroundImage.style.opacity = '1';
+            if (video) {
+                video.style.display = 'block';
+                video.play();
             }
         });
-
+        
         item.addEventListener('mouseleave', () => {
-            backgroundVideo.style.opacity = '0';
-            backgroundVideo.pause();
-            backgroundImage.style.opacity = '0';
+            if (video) {
+                video.style.display = 'none';
+                video.pause();
+            }
         });
     });
 

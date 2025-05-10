@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+
 }
 
 .fragrance-grid {
@@ -27,7 +27,6 @@
 
 .fragrance-item {
     position: relative;
-    overflow: hidden;
     border-radius: 8px;
     transition: transform 0.3s ease;
     background: rgba(0, 0, 0, 0.7);

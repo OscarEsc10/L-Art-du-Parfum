@@ -10,4 +10,5 @@ urlpatterns = [
     path('oddities/', views.oddities, name='oddities'),
     path('gifts/', views.gifts, name='gifts'),
     path('about/', views.about, name='about'),
+    path('cesta/', views.cesta, name = 'cesta.html'),
 ]

@@ -37,35 +37,44 @@
         <a href="{% url 'body' %}" data-section="body">Body – Hair – Face</a>
         <a href="{% url 'oddities' %}" data-section="oddities">Oddities</a>
         <a href="{% url 'gifts' %}" data-section=gifts>Gifts</a>
+        <a href="{% url 'generalShop' %}" data-section=gifts>Shop</a>
         <a href="{% url 'about' %}" data-section="about">About Us</a>
     </nav>
     
     <main class="main-content">
-        <video id="background-video-1" autoplay muted loop>
-            <source src="{% static 'images/videos/Tom Ford - Fougere D\'Argent.mp4' %}" type="video/mp4">
+        <video id="background-video-1" autoplay muted loop style="display: none;">
+            <source src="{% static 'Images/videos/TomFord.mp4' %}" type="video/mp4">
         </video>
-        <video id="background-video-2" autoplay muted loop>
-            <source src="{% static 'images/videos/VanillaSex.mp4' %}" type="video/mp4">
+        <video id="background-video-2" autoplay muted loop style="display: none;">
+            <source src="{% static 'Images/videos/VanillaSex.mp4' %}" type="video/mp4">
         </video>
         
         <div class="fine-fragrances-container">
             <div class="fragrance-grid">
-                <div class="fragrance-item" data-fragrance="odditie" data-video="1">
-                    <img src="{% static 'images/Tom Ford.png' %}" alt="odditie" class="imagen-hover">
+                <div class="fragrance-item">
+                    <video class="fragrance-bg-video" muted loop autoplay preload="auto">
+                        <source src="{% static 'videos/oddity1.mp4' %}" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                    <img src="{% static 'images/oddity1.png' %}" alt="Oddity 1" class="imagen-hover">
                     <div class="fragrance-content">
-                        <h3>L'Art du Parfum</h3>
-                        <p>"When silence speaks louder than words…" 🚬 </p>
-                        <button class="view-details">View Details</button>
-                    </div>           
+                        <h3>Oddity 1</h3>
+                        <p>Descripción de la fragancia 1.</p>
+                        <button class="view-details">Ver detalles</button>
+                    </div>
                 </div>
                 
-                <div class="fragrance-item" data-fragrance="odditie" data-video="2">
-                    <img src="{% static 'images/Vanilla Tom Ford.png' %}" alt="odditie" class="imagen-hover">
+                <div class="fragrance-item">
+                    <video class="fragrance-bg-video" muted loop autoplay preload="auto">
+                        <source src="{% static 'videos/oddity2.mp4' %}" type="video/mp4">
+                        Tu navegador no soporta el video.
+                    </video>
+                    <img src="{% static 'images/oddity2.png' %}" alt="Oddity 2" class="imagen-hover">
                     <div class="fragrance-content">
-                        <h3>L'Art du Parfum</h3>
-                        <p>"When silence speaks louder than words…" 🚬 </p>
-                        <button class="view-details">View Details</button>
-                    </div>           
+                        <h3>Oddity 2</h3>
+                        <p>Descripción de la fragancia 2.</p>
+                        <button class="view-details">Ver detalles</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -87,5 +96,17 @@
         </div>
     </footer>
     <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/social-icons.js' %}"></script>
+    <script>
+    document.querySelectorAll('.fragrance-bg-video').forEach(video => {
+        video.addEventListener('play', () => {
+            console.log('El video se está reproduciendo correctamente:', video);
+        });
+        video.addEventListener('error', () => {
+            console.error('Error al cargar el video:', video.currentSrc);
+        });
+    });
+    </script>
 </body>
 </html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hermès - Cesta</title>
+  <link rel="stylesheet" href="{% static 'cesta.css' %}">
+</head>
+<body>
+  <header>
+    <p><strong>HERMÈS PARIS</strong></p>
+  </header>
+
+  <div class="progress">
+    <span>CESTA</span>
+    <span>ENVÍO & PAGO</span>
+    <span>CONFIRMACIÓN</span>
+  </div>
+
+  <div class="cart-content">
+    <div class="empty-cart">
+      <p style="font-size: 2rem;">👜</p>
+      <p>Su cesta está vacía</p>
+      <button class="button">SEGUIR COMPRANDO</button>
+    </div>
+    <div class="right-panel">
+      <div class="orange-box">
+        <p><strong>LA CAJA NARANJA</strong></p>
+        <p>Todos los pedidos se entregan en una caja naranja con un lazo Bolduc, salvo <a href="#">determinadas excepciones</a></p>
+      </div>
+      <div class="features">
+        <div>🚚<br>Entrega gratuita</div>
+        <div>🔄<br>Cambios & devoluciones</div>
+        <div>🔒<br>Pago seguro</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>
+      Condiciones Generales de Venta | Términos y Condiciones de Uso | Política de privacidad | Aviso legal
+    </p>
+    <p>&copy; Hermès 2025. Todos los derechos reservados.</p>
+  </footer>
+  <script src="{% static 'cesta.js' %}"></script>
+</body>
+</html>

@@ -31,6 +31,16 @@
             <a href="../templates/generalShop.html" class="icon"><i class="fas fa-shopping-bag"></i></a>
         </div>
     </header>
+
+    <nav class="nav-menu">
+        <a href="{% url 'fine-fragrances' %}" data-section="fine-fragrances">Fine Fragrances</a>
+        <a href="{% url 'home-creations' %}" data-section="home-creations">Home Creations</a>
+        <a href="{% url 'body' %}" data-section="body">Body – Hair – Face</a>
+        <a href="{% url 'oddities' %}" data-section="oddities">Oddities</a>
+        <a href="{% url 'gifts' %}" data-section="gifts">Gifts</a>
+        <a href="{% url 'generalShop' %}" data-section="gifts">Shop</a>
+        <a href="{% url 'about' %}" data-section="about">About Us</a>
+    </nav>
     
     <main class="main-content">
         <div class="fragrance-grid">
@@ -66,5 +76,33 @@
     </footer>
     <script src="{% static 'js/generalShop.js' %}"></script>
     <script src="{% static 'js/social-icons.js' %}"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Efecto dinámico en el botón
+        const btn = document.querySelector('.continue-btn');
+        btn.addEventListener('mousemove', e => {
+            btn.style.background = `linear-gradient(90deg, #ff7f2a ${(e.offsetX/btn.offsetWidth)*100}%, #232323 100%)`;
+        });
+        btn.addEventListener('mouseleave', () => {
+            btn.style.background = '#232323';
+        });
+
+        // Barra de progreso dinámica (puedes expandir esto para pasos reales)
+        const steps = document.querySelectorAll('.progress-step');
+        steps.forEach((step, idx) => {
+            step.addEventListener('click', () => {
+                steps.forEach(s => s.classList.remove('active'));
+                step.classList.add('active');
+            });
+        });
+
+        // Animación de entrada
+        document.querySelector('.cart-empty').style.opacity = 0;
+        setTimeout(() => {
+            document.querySelector('.cart-empty').style.opacity = 1;
+            document.querySelector('.cart-empty').style.transition = 'opacity 0.8s';
+        }, 200);
+    });
+    </script>
 </body>
 </html>

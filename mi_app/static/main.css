@@ -81,7 +81,6 @@ body {
     font-family: 'JetBrains Mono', monospace;
     background-color: var(--background-color);
     color: var(--primary-color);
-    overflow-x: hidden;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -162,6 +161,8 @@ body {
     transform: translateX(0);
     transition: all 0.4s ease;
     animation: fadeIn 0.8s ease-out forwards;
+    min-height: 100vh;
+    padding-bottom: 2rem; /* Espacio para el footer */
 }
 
 @keyframes fadeIn {
@@ -197,7 +198,7 @@ body {
 .history-timeline {
     position: relative;
     min-height: 500px;
-    overflow: hidden;
+
 }
 
 .timeline-item {
@@ -438,7 +439,7 @@ body {
     position: relative;
     height: 100vh;
     width: 100%;
-    overflow: hidden;
+
 }
 
 .timeline-scroll {
@@ -723,6 +724,13 @@ body {
 }
 
 .timeline-scroll {
-    -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+.footer {
+    position: relative; /* Asegura que el footer sea visible */
+    width: 100%;
+    background: #181818;
+    padding: 2rem 0;
+    margin-top: auto;
 }

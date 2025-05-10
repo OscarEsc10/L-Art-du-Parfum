@@ -14,7 +14,7 @@ def body(request):
     return render(request, 'body.html')
 
 def generalShop(request):
-    return render(request, 'generalShop.html')  # También faltaba ".html"
+    return render(request, 'generalShop.html')
 
 def oddities(request):
     return render(request, 'oddities.html')
@@ -24,3 +24,6 @@ def gifts(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def cesta(request):
+    return render(request, 'cesta.html')

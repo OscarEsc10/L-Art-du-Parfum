@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="{% static 'main.css' %}">
     <link rel="stylesheet" href="{% static 'animations.css' %}">
+    <link rel="stylesheet" href="{% static 'components.css' %}">
+    <link rel="stylesheet" href="{% static 'about.css' %}">
+    <link rel="stylesheet" href="{% static 'reset.css' %}">
+    <link rel="stylesheet" href="{% static 'videoGolden.css' %}">
 </head>
 <body>
     <header class="header">
@@ -27,7 +31,7 @@
         <div class="header-icons">
             <a href="#" class="icon"><i class="far fa-envelope"></i></a>
             <a href="" class="icon"><i class="far fa-user"></i></a>
-            <a href="{% url 'generalShop' %}" class="icon"><i class="fas fa-shopping-bag"></i></a>
+            <a href="{% url 'cesta' %}" class="icon"><i class="fas fa-shopping-bag"></i></a>
         </div>
     </header>
     
@@ -37,6 +41,7 @@
         <a href="{% url 'body' %}" data-section="body">Body - Hair - Face</a>
         <a href="{% url 'oddities' %}" data-section="oddities">Oddities</a>
         <a href="{% url 'gifts' %}" data-section="gifts">Gifts</a>
+        <a href="{% url 'generalShop' %}" data-section="gifts">Shop</a>
         <a href="{% url 'about' %}" data-section="about">About Us</a>
     </nav>
     

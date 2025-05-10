@@ -1,8 +1,53 @@
+/* Asegúrate de que el body y html permitan scroll */
+html, body {
+    height: 100%;
+    overflow-y: auto;
+
+}
+
+/* Ajusta el contenedor principal para permitir scroll */
+.main-content {
+    min-height: 100vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+/* Ajusta el contenedor de la línea de tiempo */
+.parallax-timeline {
+    min-height: 100vh;
+    position: relative;
+    overflow-y: auto;
+}
+
+/* Ajusta las secciones de la línea de tiempo */
+.timeline-section {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ajusta el contenido de la línea de tiempo */
+.timeline-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+}
+
+/* Ajusta la barra lateral de redes sociales */
+.social-sidebar {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
 .parallax-timeline {
     position: relative;
     height: 100vh;
     width: 100%;
-    overflow: hidden;
     background: #000;
 }
 
@@ -58,17 +103,6 @@
         rgba(0, 0, 0, 0.8) 0%,
         rgba(0, 0, 0, 0.4) 100%);
     z-index: 2;
-}
-
-.timeline-content {
-    position: relative;
-    z-index: 3;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 2rem;
-    margin-top: 60px;
 }
 
 .timeline-text {
