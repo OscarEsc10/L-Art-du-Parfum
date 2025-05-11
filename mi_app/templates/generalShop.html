@@ -43,66 +43,92 @@
     </nav>
     
     <main class="main-content">
+        <div class="shop-filters">
+            <label for="filter-gender">Género:</label>
+            <select id="filter-gender">
+                <option value="all">Todos</option>
+                <option value="man">Hombre</option>
+                <option value="woman">Mujer</option>
+            </select>
+            <label for="filter-price">Ordenar por precio:</label>
+            <select id="filter-price">
+                <option value="default">Por defecto</option>
+                <option value="asc">Menor a mayor</option>
+                <option value="desc">Mayor a menor</option>
+            </select>
+        </div>
         <div class="fragrance-grid">
-            <div class="fragrance-item">
+            <div class="fragrance-item" data-gender="man" data-price="120">
                 <img src="{% static 'images/Herod.png' %}" alt="Santal 33">
                 <h3>Santal 33</h3>
-                <p>Explore our Gentlemens exclusive list ...</p>
-                <button class="view-details">View Details</button>
+                <p>Para caballero. $120</p>
+                <button class="view-details">Ver detalles</button>
             </div>
-            <div class="fragrance-item">
+            <div class="fragrance-item" data-gender="woman" data-price="95">
                 <img src="{% static 'images/Daisy.png' %}" alt="Founders Reserve">
                 <h3>Founders Reserve</h3>
-                <p>Explore our Gentlemens exclusive list ...</p>
-                <button class="view-details">View Details</button>
+                <p>Para dama. $95</p>
+                <button class="view-details">Ver detalles</button>
+            </div>
+            <div class="fragrance-item" data-gender="man" data-price="150">
+                <img src="{% static 'images/bleuChanel.webp' %}" alt="Bleu de Chanel">
+                <h3>Bleu de Chanel</h3>
+                <p>Para caballero. $150</p>
+                <button class="view-details">Ver detalles</button>
+            </div>
+            <div class="fragrance-item" data-gender="woman" data-price="110">
+                <img src="{% static 'images/cocoChanel.avif' %}" alt="Coco Mademoiselle">
+                <h3>Coco Mademoiselle</h3>
+                <p>Para dama. $110</p>
+                <button class="view-details">Ver detalles</button>
+            </div>
+            <div class="fragrance-item" data-gender="man" data-price="80">
+                <img src="{% static 'images/diorSauvage.avif' %}" alt="Dior Sauvage">
+                <h3>Dior Sauvage</h3>
+                <p>Para caballero. $80</p>
+                <button class="view-details">Ver detalles</button>
+            </div>
+            <div class="fragrance-item" data-gender="woman" data-price="130">
+                <img src="{% static 'images/flowerBomb.jpg' %}" alt="Flowerbomb">
+                <h3>Flowerbomb</h3>
+                <p>Para dama. $130</p>
+                <button class="view-details">Ver detalles</button>
+            </div>
+            <div class="fragrance-item" data-gender="man" data-price="105">
+                <img src="{% static 'images/aventus.webp' %}" alt="Aventus">
+                <h3>Aventus</h3>
+                <p>Para caballero. $105</p>
+                <button class="view-details">Ver detalles</button>
+            </div>
+            <div class="fragrance-item" data-gender="woman" data-price="140">
+                <img src="{% static 'images/tomFord.avif' %}" alt="Si Giorgio Armani">
+                <h3>Si Giorgio Armani</h3>
+                <p>Para dama. $140</p>
+                <button class="view-details">Ver detalles</button>
             </div>
         </div>
     </main>
+    <div class="wrapper">
+        <div class="main-content">
+            <footer class="footer">
+                <div class="footer-left">
+                    <a href="#">Service client</a>
+                </div>
+                <div class="footerIns">
+                    <p>Inspire by Le Labo Fragrances</p>
+                </div>
+                <div class="footer-center">
+                    <a href="#">Privacy & Terms</a>
+                    <a href="#">Visit Us</a>
+                </div>
+                <div class="footer-right">
+                    <a href="#">S'abonner à notre newsletter</a>
+                </div>
+            </footer>
+        </div>
+    </div>
     
-    <footer class="footer">
-        <div class="footer-left">
-            <a href="#">Service client</a>
-        </div>
-        <div class="footerIns">
-            <p>Inspire by Le Labo Fragrances</p>
-        </div>
-        <div class="footer-center">
-            <a href="#">Privacy & Terms</a>
-            <a href="#">Visit Us</a>
-        </div>
-        <div class="footer-right">
-            <a href="#">S'abonner à notre newsletter</a>
-        </div>
-    </footer>
     <script src="{% static 'js/generalShop.js' %}"></script>
     <script src="{% static 'js/social-icons.js' %}"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Efecto dinámico en el botón
-        const btn = document.querySelector('.continue-btn');
-        btn.addEventListener('mousemove', e => {
-            btn.style.background = `linear-gradient(90deg, #ff7f2a ${(e.offsetX/btn.offsetWidth)*100}%, #232323 100%)`;
-        });
-        btn.addEventListener('mouseleave', () => {
-            btn.style.background = '#232323';
-        });
-
-        // Barra de progreso dinámica (puedes expandir esto para pasos reales)
-        const steps = document.querySelectorAll('.progress-step');
-        steps.forEach((step, idx) => {
-            step.addEventListener('click', () => {
-                steps.forEach(s => s.classList.remove('active'));
-                step.classList.add('active');
-            });
-        });
-
-        // Animación de entrada
-        document.querySelector('.cart-empty').style.opacity = 0;
-        setTimeout(() => {
-            document.querySelector('.cart-empty').style.opacity = 1;
-            document.querySelector('.cart-empty').style.transition = 'opacity 0.8s';
-        }, 200);
-    });
-    </script>
 </body>
 </html>
