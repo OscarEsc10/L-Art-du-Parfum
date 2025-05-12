@@ -39,38 +39,34 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding-top: 120px;
 }
 
 /* Filtros */
 .shop-filters {
-    position: fixed;
-    top: 1.2rem;
-    right: 2rem;
-    background: rgba(24,24,24,0.95);
-    border-radius: 12px;
-    box-shadow: 0 2px 12px var(--box-shadow-color);
-    padding: 0.7rem 1.5rem;
-    z-index: 100;
+    position: relative;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
     display: flex;
-    align-items: center;
-    gap: 1.2rem;
-    transition: box-shadow 0.3s, background 0.3s, transform 0.3s;
-    animation: filter-float 1s cubic-bezier(0.4,0,0.2,1);
+    justify-content: space-around;
+    animation: puzzle-assemble 1s ease-out;
+    gap: 20px;
+    white-space: nowrap; /* Evitar saltos de línea */
+    transform: translateY(10px); /* Pequeño desplazamiento vertical */
 }
 
-.shop-filters:hover,
-.shop-filters:focus-within {
-    box-shadow: 0 6px 24px var(--accent-color)55;
-    background: rgba(24,24,24,1);
-    transform: scale(1.04) translateY(-2px);
+@keyframes puzzle-assemble {
+    0% { transform: scale(0.5) rotate(45deg) translateY(-20px); opacity: 0; }
+    100% { transform: scale(1) rotate(0deg) translateY(0); opacity: 1; }
 }
 
-@keyframes filter-float {
-    from { opacity: 0; transform: translateY(-30px) scale(0.95); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
+.shop-filters select {
+    transition: transform 0.5s ease;
 }
 
+.shop-filters select:hover {
+    transform: scale(1.1);
+}
 
 .fragrance-grid {
     display: flex;
@@ -235,6 +231,7 @@ footer.footer {
     border-radius: 6px;
     padding: 0.3rem 0.8rem;
     font-size: 1rem;
+    margin-right: 200px;
 }
 
 .item {

@@ -104,4 +104,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Ajustar la cuadrícula para mostrar 5 elementos por fila
     grid.style.gridTemplateColumns = 'repeat(5, 1fr)';
     grid.style.maxHeight = 'calc(100vh - 220px)'; // Limitar al footer
+});
+
+// Animación de rompecabezas para los filtros
+window.addEventListener('load', () => {
+    const filters = document.querySelector('.shop-filters');
+    filters.style.opacity = '0';
+    setTimeout(() => {
+        filters.style.transition = 'opacity 1s ease-out';
+        filters.style.opacity = '1';
+    }, 500);
 }); 
