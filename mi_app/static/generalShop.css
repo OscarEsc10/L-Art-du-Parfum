@@ -1,25 +1,55 @@
-body, html {
-    height: 100%;
+:root {
+    --background-color: #111; 
+    --text-color: #ffffff;       
+    --accent-color: #6a6868;     /* gris para hover y efectos */
+    --font-family: 'JetBrains Mono', monospace;
+    --box-shadow-color: rgba(0,0,0,0.18);
+}
+
+
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body {
-    background: #111;
-    color: #e5e1d8;
-    font-family: 'JetBrains Mono', monospace;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+html, body {
+    height: 100%;
+    font-family: var(--font-family);
+    background: var(--background-color);
+    color: var(--text-color);
+    overflow-x: hidden;
 }
 
+/* Layout general */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh; /* Garantiza que la altura mínima sea 100% de la ventana */
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 120px;
+}
+
+/* Filtros */
 .shop-filters {
     position: fixed;
     top: 1.2rem;
     right: 2rem;
     background: rgba(24,24,24,0.95);
     border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    box-shadow: 0 2px 12px var(--box-shadow-color);
     padding: 0.7rem 1.5rem;
     z-index: 100;
     display: flex;
@@ -28,162 +58,192 @@ body {
     transition: box-shadow 0.3s, background 0.3s, transform 0.3s;
     animation: filter-float 1s cubic-bezier(0.4,0,0.2,1);
 }
-.shop-filters:hover, .shop-filters:focus-within {
-    box-shadow: 0 6px 24px #ff7f2a55;
+
+.shop-filters:hover,
+.shop-filters:focus-within {
+    box-shadow: 0 6px 24px var(--accent-color)55;
     background: rgba(24,24,24,1);
     transform: scale(1.04) translateY(-2px);
 }
+
 @keyframes filter-float {
     from { opacity: 0; transform: translateY(-30px) scale(0.95); }
     to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-.shop-filters label {
-    margin-right: 0.5rem;
+
+.fragrance-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    max-width: 1500px;
+    margin: 2rem auto 0;
 }
+
+.fragrance-grid > .item {
+    flex: 1 1 calc(25% - 2rem); /* 4 ítems por fila menos el gap */
+    box-sizing: border-box;
+}
+
+@media (max-width: 1100px) {
+    .fragrance-grid > .item {
+      flex: 1 1 calc(33.333% - 2rem);
+    }
+  }
+  @media (max-width: 800px) {
+    .fragrance-grid > .item {
+      flex: 1 1 calc(50% - 2rem);
+    }
+  }
+  @media (max-width: 500px) {
+    .fragrance-grid > .item {
+      flex: 1 1 100%;
+    }
+  }
+
+/* Tarjeta de producto - tamaño fijo */
+.fragrance-item {
+    width: 280px;
+    height: 420px;
+    background: rgba(24, 24, 24, 0.85);
+    border-radius: 10px;
+    box-shadow: 0 1px 6px var(--box-shadow-color);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    transition: transform 0.4s, box-shadow 0.2s, opacity 0.4s ease;
+}
+
+.fragrance-item.hide {
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+    position: absolute; /* evita que se ocupe espacio */
+  }
+
+.fragrance-item:hover {
+    transform: translateY(-4px) scale(1.03);
+}
+
+
+.fragrance-item img {
+    width: 240px;
+    height: 220px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 0.7rem;
+    display: block;
+}
+
+
+/* Textos */
+.fragrance-item h2,
+.fragrance-item p,
+.fragrance-item .view-details {
+    background: none; /* Eliminar fondo */
+    border-radius: 4px;
+    width: 90%;
+    margin: 0.2rem auto;
+    position: relative;
+    z-index: 1;
+}
+
+
+.fragrance-item h2 {
+    font-size: 1rem;
+    color: #f5e9c8;
+    font-weight: 500;
+    height: 2.2rem; /* Igualar altura del título */
+    margin-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.fragrance-item p {
+    font-size: 0.85rem;
+    color: #bdb7a7;
+    height: 1.8rem; /* Igualar altura */
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.view-details {
+    font-size: 0.8rem;
+    background: #333;
+    color: #eee;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+
+.view-details:hover {
+    background: #555; /* Cambiar hover a gris */
+}
+
+.view-details::after {
+    content: '';
+}
+
+footer.footer {
+    width: 100%;
+    padding: 1rem;
+    background: #1a1a1a;
+    text-align: center;
+    color: #aaa;
+    margin-top: 2000px; /* Este es el cambio principal, lo hace adaptable al contenido */
+}
+
+
+*:focus {
+    outline: none !important;
+}
+
+/* Estilos para el scroll */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a; /* Color de fondo del track del scroll */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444; /* Color del thumb del scroll */
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color del thumb al pasar el mouse */
+}
+
 .shop-filters select {
-    background: #181818;
-    color: #e5e1d8;
+    background: #000; /* Cambiar el fondo a negro */
+    color: var(--text-color);
     border: 1px solid #444;
     border-radius: 6px;
     padding: 0.3rem 0.8rem;
     font-size: 1rem;
 }
 
-.fragrance-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    padding: 1rem;
-    justify-content: center;
-    align-items: start;
-    max-width: 100%;
-    margin: 0 auto;
-    overflow-y: auto;
-    flex: 1 1 auto;
-    min-height: 0;
-    max-height: calc(100vh - 220px);
-    padding-top: 120px;
+.item {
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.fragrance-item {
-    background: rgba(24, 24, 24, 0.85);
-    border-radius: 10px;
-    box-shadow: 0 1px 6px rgba(0,0,0,0.18);
-    padding: 1rem;
-    text-align: center;
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    transition: transform 0.2s, box-shadow 0.2s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    overflow: hidden;
-    position: relative;
-    margin: 0 auto;
-}
-
-.fragrance-item:hover {
-    transform: translateY(-4px) scale(1.03);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.25);
-}
-
-.fragrance-item img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 10px;
-    display: block;
-    position: relative;
-    z-index: 0;
-}
-
-.fragrance-item h3, .fragrance-item p, .fragrance-item .view-details {
-    position: relative;
-    z-index: 1;
-    background: rgba(24,24,24,0.7);
-    margin: 0.1rem 0 0.1rem 0;
-    border-radius: 4px;
-    width: 80%;
-    left: 10%;
-
-}
-
-.fragrance-item h3 {
-    font-size: 0.75rem;
-    color: #f5e9c8;
-    font-weight: 500;
-    margin-top: 0.2rem;
-}
-
-.fragrance-item p {
-    font-size: 0.65rem;
-    color: #bdb7a7;
-    margin-bottom: 0.1rem;
-}
-
-.view-details {
-    font-size: 0.7rem;
-    padding: 0.1rem 0.3rem;
-    border-radius: 4px;
-    margin-bottom: 0.1rem;
-}
-
-.main-content {
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    min-height: 0;
-    padding-top: 120px;
-}
-
-footer.footer {
-    position: relative;
-    width: 100%;
-    margin-top: auto;
-    z-index: 2;
-} 
-
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-/* Asegura que el wrapper ocupa todo el alto y el main-content se expande */
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-.main-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden; /* Elimina scroll interno */
-    padding-top: 120px;
-}
-
-/* Grid con layout sin scroll y distribución proporcional */
-.fragrance-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); /* partes iguales */
-    grid-auto-rows: 1fr; /* misma altura */
-    gap: 2rem;
-    padding: 1rem;
-    overflow: hidden; /* Elimina scroll */
-    flex: 1;
-    place-items: center;
-}
-
-/* Ajuste de cada producto para que se adapte a la celda */
-.fragrance-item {
-    max-width: none;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
+.item.hide {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    position: absolute; /* saca el espacio del layout */
 }

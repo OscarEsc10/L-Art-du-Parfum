@@ -26,7 +26,7 @@
     <div class="empty-cart">
       <p style="font-size: 2rem;">👜</p>
       <p>Su cesta está vacía</p>
-      <button class="button">SEGUIR COMPRANDO</button>
+      <button class="button" href="{% url 'generalShop' %}">SEGUIR COMPRANDO</button>
     </div>
     <div class="right-panel">
       <div class="orange-box">
@@ -41,12 +41,25 @@
     </div>
   </div>
 
-  <footer>
-    <p>
-      Condiciones Generales de Venta | Términos y Condiciones de Uso | Política de privacidad | Aviso legal
-    </p>
-    <p>&copy; Hermès 2025. Todos los derechos reservados.</p>
-  </footer>
+  <div class="wrapper">
+    <div class="main-content">
+        <footer class="footer">
+            <div class="footer-left">
+                <a href="#">Service client</a>
+            </div>
+            <div class="footerIns">
+                <p>Inspire by Le Labo Fragrances</p>
+            </div>
+            <div class="footer-center">
+                <a href="#">Privacy & Terms</a>
+                <a href="#">Visit Us</a>
+            </div>
+            <div class="footer-right">
+                <a href="#">S'abonner à notre newsletter</a>
+            </div>
+        </footer>
+    </div>
+</div>
   <script src="{% static 'js/cesta.js' %}"></script>
 </body>
 </html>

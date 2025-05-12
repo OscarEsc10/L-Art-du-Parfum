@@ -28,7 +28,7 @@
         <div class="header-icons">
             <a href="#" class="icon"><i class="far fa-envelope"></i></a>
             <a href="#" class="icon"><i class="far fa-user"></i></a>
-            <a href="../templates/generalShop.html" class="icon"><i class="fas fa-shopping-bag"></i></a>
+            <a href="{% url 'cesta' %}" class="icon"><i class="fas fa-shopping-bag"></i></a>
         </div>
     </header>
 
@@ -60,51 +60,99 @@
         <div class="fragrance-grid">
             <div class="fragrance-item" data-gender="man" data-price="120">
                 <img src="{% static 'images/Herod.png' %}" alt="Santal 33">
-                <h3>Santal 33</h3>
-                <p>Para caballero. $120</p>
-                <button class="view-details">Ver detalles</button>
+                <h3>Herod</h3>
+                <p>Gentlemen - $120</p>
+                <button class="view-details">Add to cart</button>
             </div>
             <div class="fragrance-item" data-gender="woman" data-price="95">
-                <img src="{% static 'images/Daisy.png' %}" alt="Founders Reserve">
-                <h3>Founders Reserve</h3>
-                <p>Para dama. $95</p>
-                <button class="view-details">Ver detalles</button>
+                <img src="{% static 'images/Daisy.png' %}" alt="Daisy perfume bottle"/>
+                <h3>Daisy</h3>
+                <p>Ladie - $95</p>
+                <button class="view-details">Add to cart</button>
             </div>
             <div class="fragrance-item" data-gender="man" data-price="150">
                 <img src="{% static 'images/bleuChanel.webp' %}" alt="Bleu de Chanel">
                 <h3>Bleu de Chanel</h3>
-                <p>Para caballero. $150</p>
-                <button class="view-details">Ver detalles</button>
+                <p>Gentlemen - $150</p>
+                <button class="view-details">Add to cart</button>
             </div>
             <div class="fragrance-item" data-gender="woman" data-price="110">
                 <img src="{% static 'images/cocoChanel.avif' %}" alt="Coco Mademoiselle">
                 <h3>Coco Mademoiselle</h3>
-                <p>Para dama. $110</p>
-                <button class="view-details">Ver detalles</button>
+                <p>Ladie - $110</p>
+                <button class="view-details">Add to cart</button>
             </div>
             <div class="fragrance-item" data-gender="man" data-price="80">
                 <img src="{% static 'images/diorSauvage.avif' %}" alt="Dior Sauvage">
                 <h3>Dior Sauvage</h3>
-                <p>Para caballero. $80</p>
-                <button class="view-details">Ver detalles</button>
+                <p>Gentlemen - $80</p>
+                <button class="view-details">Add to cart</button>
             </div>
             <div class="fragrance-item" data-gender="woman" data-price="130">
                 <img src="{% static 'images/flowerBomb.jpg' %}" alt="Flowerbomb">
                 <h3>Flowerbomb</h3>
-                <p>Para dama. $130</p>
-                <button class="view-details">Ver detalles</button>
+                <p>Ladie - $130</p>
+                <button class="view-details">Add to cart</button>
             </div>
             <div class="fragrance-item" data-gender="man" data-price="105">
                 <img src="{% static 'images/aventus.webp' %}" alt="Aventus">
                 <h3>Aventus</h3>
-                <p>Para caballero. $105</p>
-                <button class="view-details">Ver detalles</button>
+                <p>Gentlemen - $105</p>
+                <button class="view-details">Add to cart</button>
             </div>
-            <div class="fragrance-item" data-gender="woman" data-price="140">
+            <div class="fragrance-item" data-gender="man" data-price="140">
                 <img src="{% static 'images/tomFord.avif' %}" alt="Si Giorgio Armani">
-                <h3>Si Giorgio Armani</h3>
-                <p>Para dama. $140</p>
-                <button class="view-details">Ver detalles</button>
+                <h3>Tom Ford</h3>
+                <p>Gentlemen - $140</p>
+                <button class="view-details">Add to cart</button>
+            </div>
+            <div class="fragrance-item" data-gender="woman" data-price="130">
+                <img src="{% static 'images/Devotion.webp' %}" alt="Devotion">
+                <h3>Devotion</h3>
+                <p>Ladie - $130</p>
+                <button class="view-details">Add to cart</button>
+            </div>
+            <div class="fragrance-item" data-gender="woman" data-price="130">
+                <img src="{% static 'images/JeanPaulGaultierLaBelle.webp' %}" alt="JeanPaul">
+                <h3>La Belle</h3>
+                <p>Ladie - $130</p>
+                <button class="view-details">Add to cart</button>
+            </div>
+            <div class="fragrance-item" data-gender="woman" data-price="130">
+                <img src="{% static 'images/RabanneIntense.webp' %}" alt="Rabanne">
+                <h3>Rabanne</h3>
+                <p>Ladie - $130</p>
+                <button class="view-details">Add to cart</button>
+            </div>
+            <div class="fragrance-item" data-gender="man" data-price="80">
+                <img src="{% static 'images/LaytonDemarly.jpg' %}" alt="Layton">
+                <h3>Layton</h3>
+                <p>Gentlemen - $80</p>
+                <button class="view-details">Add to cart</button>
+            </div>
+            <div class="fragrance-item" data-gender="man" data-price="80">
+                <img src="{% static 'images/valentino.webp' %}" alt="valentino">
+                <h3>Valentino</h3>
+                <p>Gentlemen - $80</p>
+                <button class="view-details">Add to cart</button>
+            </div>
+            <div class="fragrance-item" data-gender="man" data-price="80">
+                <img src="{% static 'images/khamrahQahwa.webp' %}" alt="Khamrah Qahwa">
+                <h3>khamra Qahwa</h3>
+                <p>Gentlemen - $80</p>
+                <button class="view-details">Add to cart</button>
+            </div>
+            <div class="fragrance-item" data-gender="woman" data-price="80">
+                <img src="{% static 'images/Xerjoff_Alexandria_II.webp' %}" alt="Alexandria">
+                <h3>Alexandria xerjoff</h3>
+                <p>Ladie - $80</p>
+                <button class="view-details">Add to cart</button>
+            </div>
+            <div class="fragrance-item" data-gender="woman" data-price="80">
+                <img src="{% static 'images/InitioMuskTherapy.jpeg' %}" alt="initio">
+                <h3>Initio Musk Therapy</h3>
+                <p>Ladie - $80</p>
+                <button class="view-details">Add to cart</button>
             </div>
         </div>
     </main>
@@ -127,7 +175,6 @@
             </footer>
         </div>
     </div>
-    
     <script src="{% static 'js/generalShop.js' %}"></script>
 </body>
 </html>

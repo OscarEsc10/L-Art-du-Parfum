@@ -161,7 +161,6 @@
     }
 }
 
-/* Asegúrate de que el body y html permitan scroll */
 html, body {
     height: 100%;
     overflow: auto;
