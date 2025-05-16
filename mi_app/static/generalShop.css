@@ -112,7 +112,9 @@ body {
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    transition: transform 0.4s, box-shadow 0.2s, opacity 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
 .fragrance-item.hide {
@@ -122,11 +124,6 @@ body {
     position: absolute; /* evita que se ocupe espacio */
   }
 
-.fragrance-item:hover {
-    transform: translateY(-4px) scale(1.03);
-}
-
-
 .fragrance-item img {
     width: 240px;
     height: 220px;
@@ -134,8 +131,36 @@ body {
     border-radius: 10px;
     margin-bottom: 0.7rem;
     display: block;
+    transition: opacity 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
+.fragrance-video {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 240px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.fragrance-item:hover .fragrance-video {
+    opacity: 1;
+}
+
+.fragrance-item:hover img {
+    opacity: 0;
+}
+
+/* Eliminar cualquier transformación o efecto que pueda estar causando conflicto */
+.fragrance-item:hover {
+    transform: none;
+}
 
 /* Textos */
 .fragrance-item h2,
@@ -173,19 +198,18 @@ body {
 }
 
 .view-details {
-    font-size: 0.8rem;
-    background: #333;
-    color: #eee;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-
 .view-details:hover {
-    background: #555; /* Cambiar hover a gris */
+    background: white;
+    color: black;
 }
 
 .view-details::after {
@@ -243,4 +267,19 @@ footer.footer {
     transform: scale(0.95);
     pointer-events: none;
     position: absolute; /* saca el espacio del layout */
+}
+
+/* Estilos para el efecto de rompecabezas */
+.fragrance-item canvas {
+    width: 240px;
+    height: 220px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 0.7rem;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.fragrance-item canvas:hover {
+    transform: scale(1.05);
 }

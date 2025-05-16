@@ -97,6 +97,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Manejo de videos
+    fragranceItems.forEach(item => {
+        const video = item.querySelector('.fragrance-bg-video');
+        
+        if (video) {
+            // Precargar el video
+            video.load();
+            
+            // Manejar el hover
+            item.addEventListener('mouseenter', () => {
+                video.play().catch(error => {
+                    console.error('Error al reproducir el video:', error);
+                });
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0;
+            });
+            
+            // Manejar eventos del video
+            video.addEventListener('play', () => {
+                console.log('Video reproduciéndose:', video);
+            });
+            
+            video.addEventListener('error', () => {
+                console.error('Error al cargar el video:', video.currentSrc);
+            });
+        }
+    });
+
     // Manejar clics en los enlaces de navegación
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', function(e) {
@@ -128,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Manejar clics en todos los botones de view-details en la sección fine-fragrances
+    // Manejar clics en todos los botones de view-details
     document.querySelectorAll('.view-details').forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
@@ -191,24 +222,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-
-    fragranceItems.forEach(item => {
-        const video = item.querySelector('.fragrance-video');
-        
-        item.addEventListener('mouseenter', () => {
-            if (video) {
-                video.style.display = 'block';
-                video.play();
-            }
-        });
-        
-        item.addEventListener('mouseleave', () => {
-            if (video) {
-                video.style.display = 'none';
-                video.pause();
-            }
-        });
-    });
 
     // Manejo de la línea de tiempo
     const timelineSections = document.querySelectorAll('.timeline-section');

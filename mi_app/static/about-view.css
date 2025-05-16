@@ -1,14 +1,12 @@
 /* Asegúrate de que el body y html permitan scroll */
 html, body {
     height: 100%;
-    overflow-y: auto;
 
 }
 
 /* Ajusta el contenedor principal para permitir scroll */
 .main-content {
     min-height: 100vh;
-    overflow-y: auto;
     position: relative;
 }
 
@@ -16,7 +14,6 @@ html, body {
 .parallax-timeline {
     min-height: 100vh;
     position: relative;
-    overflow-y: auto;
 }
 
 /* Ajusta las secciones de la línea de tiempo */
