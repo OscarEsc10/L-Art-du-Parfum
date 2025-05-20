@@ -1,12 +1,14 @@
 :root {
-    --background-color: #111; 
-    --text-color: #ffffff;       
-    --accent-color: #6a6868;     /* gris para hover y efectos */
+    --background-color: #111;
+    --text-color: #ffffff;
     --font-family: 'JetBrains Mono', monospace;
-    --box-shadow-color: rgba(0,0,0,0.18);
+    --box-shadow-color: rgba(0, 0, 0, 0.18);
+    --card-bg: rgba(24, 24, 24, 0.85);
+    --highlight-color: #f5e9c8;
+    --secondary-text: #bdb7a7;
 }
 
-
+/* Reset básico */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -21,7 +23,7 @@ html, body {
     overflow-x: hidden;
 }
 
-/* Layout general */
+/* Estructura general */
 body {
     display: flex;
     flex-direction: column;
@@ -32,7 +34,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 100vh; /* Garantiza que la altura mínima sea 100% de la ventana */
+    min-height: 100vh;
 }
 
 .main-content {
@@ -51,16 +53,29 @@ body {
     justify-content: space-around;
     animation: puzzle-assemble 1s ease-out;
     gap: 20px;
-    white-space: nowrap; /* Evitar saltos de línea */
-    transform: translateY(10px); /* Pequeño desplazamiento vertical */
+    white-space: nowrap;
+    transform: translateY(10px);
 }
 
 @keyframes puzzle-assemble {
-    0% { transform: scale(0.5) rotate(45deg) translateY(-20px); opacity: 0; }
-    100% { transform: scale(1) rotate(0deg) translateY(0); opacity: 1; }
+    0% {
+        transform: scale(0.5) rotate(45deg) translateY(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) rotate(0deg) translateY(0);
+        opacity: 1;
+    }
 }
 
 .shop-filters select {
+    background: #000;
+    color: var(--text-color);
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 0.3rem 0.8rem;
+    font-size: 1rem;
+    margin-right: 200px;
     transition: transform 0.5s ease;
 }
 
@@ -68,6 +83,7 @@ body {
     transform: scale(1.1);
 }
 
+/* Grid */
 .fragrance-grid {
     display: flex;
     flex-wrap: wrap;
@@ -79,31 +95,34 @@ body {
 }
 
 .fragrance-grid > .item {
-    flex: 1 1 calc(25% - 2rem); /* 4 ítems por fila menos el gap */
+    flex: 1 1 calc(25% - 2rem);
     box-sizing: border-box;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 @media (max-width: 1100px) {
     .fragrance-grid > .item {
-      flex: 1 1 calc(33.333% - 2rem);
+        flex: 1 1 calc(33.333% - 2rem);
     }
-  }
-  @media (max-width: 800px) {
-    .fragrance-grid > .item {
-      flex: 1 1 calc(50% - 2rem);
-    }
-  }
-  @media (max-width: 500px) {
-    .fragrance-grid > .item {
-      flex: 1 1 100%;
-    }
-  }
+}
 
-/* Tarjeta de producto - tamaño fijo */
+@media (max-width: 800px) {
+    .fragrance-grid > .item {
+        flex: 1 1 calc(50% - 2rem);
+    }
+}
+
+@media (max-width: 500px) {
+    .fragrance-grid > .item {
+        flex: 1 1 100%;
+    }
+}
+
+/* Tarjeta de producto */
 .fragrance-item {
     width: 280px;
     height: 420px;
-    background: rgba(24, 24, 24, 0.85);
+    background: var(--card-bg);
     border-radius: 10px;
     box-shadow: 0 1px 6px var(--box-shadow-color);
     padding: 1rem;
@@ -117,56 +136,30 @@ body {
     transition: transform 0.3s ease;
 }
 
-.fragrance-item.hide {
-    opacity: 0;
-    transform: scale(0.9);
-    pointer-events: none;
-    position: absolute; /* evita que se ocupe espacio */
-  }
+/* Eliminar efecto de desaparición */
+.fragrance-item:hover {
+    transform: translateY(-5px); /* efecto sutil */
+}
 
+/* Imagen */
 .fragrance-item img {
     width: 240px;
-    height: 220px;
-    object-fit: contain;
+    height: 240px;
+    object-fit: cover;
     border-radius: 10px;
     margin-bottom: 0.7rem;
     display: block;
-    transition: opacity 0.3s ease;
     position: relative;
     z-index: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.fragrance-video {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    width: 240px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 10px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 2;
-}
-
-.fragrance-item:hover .fragrance-video {
-    opacity: 1;
-}
-
-.fragrance-item:hover img {
-    opacity: 0;
-}
-
-/* Eliminar cualquier transformación o efecto que pueda estar causando conflicto */
-.fragrance-item:hover {
-    transform: none;
-}
 
 /* Textos */
 .fragrance-item h2,
 .fragrance-item p,
 .fragrance-item .view-details {
-    background: none; /* Eliminar fondo */
+    background: none;
     border-radius: 4px;
     width: 90%;
     margin: 0.2rem auto;
@@ -175,111 +168,74 @@ body {
 }
 
 
+
 .fragrance-item h2 {
     font-size: 1rem;
-    color: #f5e9c8;
+    color: var(--highlight-color);
     font-weight: 500;
-    height: 2.2rem; /* Igualar altura del título */
-    margin-bottom: 0.3rem;
+    height: 2.2rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 
 .fragrance-item p {
     font-size: 0.85rem;
-    color: #bdb7a7;
-    height: 1.8rem; /* Igualar altura */
-    margin-bottom: 0.5rem;
+    color: var(--secondary-text);
+    height: 1.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* Botón */
 .view-details {
     background: transparent;
     border: 1px solid white;
-    color: white;
+    color: #ccc;
     padding: 8px 16px;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.view-details:hover {
-    background: white;
-    color: black;
+
+/* Remover estilos innecesarios */
+.fragrance-video,
+.fragrance-item canvas {
+    display: none;
 }
 
-.view-details::after {
-    content: '';
+*:focus {
+    outline: none !important;
 }
 
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Footer */
 footer.footer {
     width: 100%;
     padding: 1rem;
     background: #1a1a1a;
     text-align: center;
     color: #aaa;
-    margin-top: 2000px; /* Este es el cambio principal, lo hace adaptable al contenido */
+    margin-top: 4rem;
 }
 
 
-*:focus {
-    outline: none !important;
-}
-
-/* Estilos para el scroll */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: #1a1a1a; /* Color de fondo del track del scroll */
-}
-
-::-webkit-scrollbar-thumb {
-    background: #444; /* Color del thumb del scroll */
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Color del thumb al pasar el mouse */
-}
-
-.shop-filters select {
-    background: #000; /* Cambiar el fondo a negro */
-    color: var(--text-color);
-    border: 1px solid #444;
-    border-radius: 6px;
-    padding: 0.3rem 0.8rem;
-    font-size: 1rem;
-    margin-right: 200px;
-}
-
-.item {
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.item.hide {
-    opacity: 0;
-    transform: scale(0.95);
-    pointer-events: none;
-    position: absolute; /* saca el espacio del layout */
-}
-
-/* Estilos para el efecto de rompecabezas */
-.fragrance-item canvas {
-    width: 240px;
-    height: 220px;
-    object-fit: contain;
-    border-radius: 10px;
-    margin-bottom: 0.7rem;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.fragrance-item canvas:hover {
-    transform: scale(1.05);
-}

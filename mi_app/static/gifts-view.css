@@ -2,7 +2,7 @@
 .fine-fragrances-container {
     padding: 2rem;
     height: calc(100vh - 200px);
-    color: white;
+    color: #ccc;
     animation: fadeIn 0.8s ease-out;
     position: relative;
     z-index: 1;
@@ -100,7 +100,7 @@
     padding: 0.8rem 1.5rem;
     background: transparent;
     border: 1px solid white;
-    color: white;
+    color: #ccc;
     cursor: pointer;
     transition: all 0.3s ease;
     font-family: 'JetBrains Mono', monospace;

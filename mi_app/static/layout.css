@@ -97,7 +97,7 @@ body {
     backdrop-filter: blur(10px);
     padding: 2rem;
     border-radius: 8px;
-    color: white;
+    color: #ccc;
     transition: all 0.3s ease;
     cursor: pointer;
     box-shadow: none;
@@ -128,7 +128,7 @@ body {
     display: inline-block;
     padding: 0.5rem 1rem;
     border: 1px solid white;
-    color: white;
+    color: #ccc;
     text-decoration: none;
     transition: all 0.3s ease;
     font-family: 'JetBrains Mono', monospace;

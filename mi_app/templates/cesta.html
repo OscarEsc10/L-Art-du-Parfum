@@ -7,9 +7,7 @@
   <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
-  <link rel="stylesheet" href="{% static 'reset.css' %}">
-  <link rel="stylesheet" href="{% static 'main.css' %}">
-  <title>Cesta L' Art du parfum </title>
+  <title>Cesta - L' Art du parfum </title>
   <link rel="stylesheet" href="{% static 'cesta.css' %}">
 </head>
 <body>
@@ -26,12 +24,12 @@
     <div class="empty-cart">
       <p style="font-size: 2rem;">👜</p>
       <p>Su cesta está vacía</p>
-      <button class="button" href="{% url 'generalShop' %}">SEGUIR COMPRANDO</button>
+      <button class="button" onclick="window.location.href='{% url 'generalShop' %}'">SEGUIR COMPRANDO</button>
     </div>
     <div class="right-panel">
       <div class="orange-box">
-        <p><strong>LA CAJA NARANJA</strong></p>
-        <p>Todos los pedidos se entregan en una caja naranja con un lazo Bolduc, salvo <a href="#">determinadas excepciones</a></p>
+        <p><strong></strong>CESTA</strong></p>
+        <p>Todos los pedidos se entregan en una cesta</a></p>
       </div>
       <div class="features">
         <div>🚚<br>Entrega gratuita</div>
